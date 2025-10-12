@@ -1,0 +1,85 @@
+.fitness-programs {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.fitness-programs h1 {
+  font-size: 2.6rem;
+  margin-bottom: 40px;
+  color: #333;
+  position: relative;
+}
+
+.fitness-programs h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #f4b400, #ff6f61);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.program-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 20px;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.program-card.water { background: linear-gradient(135deg, #007cf0, #00dfd8); }
+.program-card.gym { background: linear-gradient(135deg, #ff512f, #dd2476); }
+.program-card.stretching { background: linear-gradient(135deg, #f7971e, #ffd200); }
+.program-card.yoga { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+.program-card.intensive1 { background: linear-gradient(135deg, #fc5c7d, #6a82fb); }
+.program-card.intensive2 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+
+.program-card h2 {
+  font-size: 1.6rem;
+  margin: 0 0 12px;
+  position: relative;
+  z-index: 2;
+}
+.program-card p {
+  font-size: 1.1rem;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.program-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.15);
+  transform: skewX(-20deg);
+  transition: left 0.5s;
+  z-index: 1;
+}
+.program-card:hover::before {
+  left: 100%;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 600px) {
+  .program-card h2 { font-size: 1.4rem; }
+  .program-card p { font-size: 1rem; }
+}

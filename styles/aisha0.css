@@ -1,0 +1,85 @@
+/* Fonts */
+@import url('https://fonts.cdnfonts.com/css/helvetica-now-display');
+@import url('https://fonts.cdnfonts.com/css/bond');
+
+/* Reset */
+body {
+  margin: 0;
+  margin-top: 100px;
+  padding: 0;
+  background-color: #ffffff;
+  color: #161618;
+  font-family: 'Bond', sans-serif;
+}
+
+/* FAQ Section */
+.faq {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.faq-heading {
+  font-family: 'Helvetica Now Display', sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #161618;
+}
+
+/* FAQ Items */
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 0;
+}
+
+.faq-item input {
+  display: none;
+}
+
+.faq-question {
+  display: block;
+  font-family: 'Helvetica Now Display', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #3447F6;
+  cursor: pointer;
+  position: relative;
+  padding-right: 25px;
+}
+
+/* Plus/Minus icon */
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.3rem;
+  color: #3447F6;
+  transition: transform 0.3s ease;
+}
+
+.faq-item input:checked + .faq-question::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-item input:checked ~ .faq-answer {
+  max-height: 500px; /* enough for long answers */
+  margin-top: 15px;
+}
+
+.faq-answer p {
+  font-family: 'Bond', sans-serif;
+  font-size: 1rem;
+  color: #46464A;
+  line-height: 1.6;
+}
+
