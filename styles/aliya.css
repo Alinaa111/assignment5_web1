@@ -149,14 +149,5 @@ text-decoration: underline;
 
 /* footer */
 footer {
-grid-area: footer;
-background:#f3f4f6;
-color: #555;
-text-align: center;
-padding: 15px;
-}
-
-footer p {
-margin: 5px 0;
-font-size: 14px;
+  grid-area: footer;
 }

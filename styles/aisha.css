@@ -1,11 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/helvetica-now-display');
 @import url('https://fonts.cdnfonts.com/css/bond');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     display: flex;
