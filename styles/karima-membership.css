@@ -1,7 +1,5 @@
 body { 
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background: #ffffff;
   color: #333;
 }
@@ -155,20 +153,5 @@ button:hover {
   width: 70px;     /* smaller resize */
   height: auto;    /* keep proportions */
   z-index: 2;      /* make sure image is above gradient */
-}
-
-
-
-footer {
-  margin-top: 50px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  padding: 15px;
-  background: #f3f4f6;
-  color: #555;
-  font-size: 14px;
-  border-top: 1px solid #ddd;
 }
 
