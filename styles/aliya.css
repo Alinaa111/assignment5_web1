@@ -1,6 +1,6 @@
 body {
 font-family: Arial;
-background: linear-gradient(135deg, #5bc9eb, #3447F6);
+background: linear-gradient(135deg, #89f7fe, #66a6ff);
 display: grid;
 grid-template-areas:
 "header header"
@@ -20,6 +20,8 @@ background: #f4f6ff;
 padding: 22px;
 box-shadow: 2px 0 8px rgba(0,0,0,0.1);
 position: fixed;
+top: 20;  
+height: calc(100% - 60px); 
 }
 
 aside nav ul {
@@ -37,13 +39,17 @@ padding: 10px 15px;
 border-radius: 8px;
 text-decoration: none;
 font-weight: bold;
-color: #3447F6;
+color: #078fd8;
 transition: all 0.2s ease;
 }
 
 aside nav ul li a:hover {
-background: #3447F6;
+background: #078fd8;
 color: #fff;
+}
+aside nav ul li a.active {
+  background: #078fd8;
+  color: #fff;
 }
 
 /* header */
@@ -92,7 +98,8 @@ padding-right: 30px;
 
 .login-box h2 {
 margin-bottom: 25px;
-color: #000000;
+color: #078fd8;
+font-weight: bold;
 }
 
 .login-box input {
@@ -106,8 +113,9 @@ transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .login-box input:focus {
-border-color: #3447F6;
+border-color: #078fd8;
 outline: none;
+box-shadow: 0 0 6px rgba(0, 119, 182, 0.3);
 }
 
 .btn {
@@ -118,7 +126,7 @@ padding: 12px;
 margin-top: 12px;
 border: none;
 border-radius: 8px;
-background: #3447F6;
+background: #078fd8;
 color: #fff;
 font-size: 16px;
 cursor: pointer;
@@ -127,7 +135,7 @@ transition: background 0.2s ease;
 }
 
 .btn:hover {
-background: #2c3ce0;
+background: #0077b6;
 }
 
 .extra {
@@ -137,17 +145,22 @@ color: #555;
 }
 
 .extra a {
-color: #3447F6;
+color: #078fd8;
 text-decoration: none;
 transition: color 0.2s ease;
 }
 
 .extra a:hover {
-color: #2c3ce0;
+color: #0077b6;
 text-decoration: underline;
 }
 
 /* footer */
 footer {
   grid-area: footer;
+  text-align: center;
+  padding: 15px 0;
+  background: #f8f9fa;
+  font-size: 14px;
+  color: #444;
 }
