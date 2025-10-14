@@ -1,6 +1,6 @@
 body {
 font-family: Arial, sans-serif;
-background: linear-gradient(135deg, #5bc9eb, #3447F6);
+background: linear-gradient(135deg, #89f7fe, #66a6ff);
 display: grid;
 grid-template-areas:
 "header header"
@@ -41,13 +41,17 @@ padding: 10px 15px;
 border-radius: 8px;
 text-decoration: none;
 font-weight: bold;
-color: #3447F6;
+color: #078fd8;
 transition: all 0.2s ease;
 }
 
 aside nav ul li a:hover {
-background: #3447F6;
+background: #078fd8;
 color: #fff;
+}
+aside nav ul li a.active {
+  background: #078fd8;
+  color: #fff;
 }
 
 /* main */
@@ -69,7 +73,7 @@ padding: 25px; text-align: center; }
 .avatar { width: 120px; 
 height: 120px; 
 border-radius: 50%; 
-border: 4px solid #3447F6; 
+border: 4px solid #078fd8; 
 object-fit: cover; 
 margin-bottom: 15px; } 
 
@@ -100,7 +104,7 @@ margin-top: 50px;
 .progress-card h3 {
   margin-top: 0;
   margin-bottom: 20px;
-  color: #3447F6;
+  color: #078fd8;
 }
 
 .progress-stats {
@@ -125,7 +129,7 @@ margin-top: 50px;
 .stat-box h4 {
   margin: 0;
   font-size: 26px;
-  color: #3447F6;
+  color: #078fd8;
 }
 
 .stat-box p {
@@ -146,7 +150,7 @@ margin-top: 50px;
 .achievements-card h3 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #3447F6;
+  color: #078fd8;
 }
 
 .achievements-list {
@@ -182,7 +186,7 @@ margin-top: 50px;
   padding: 10px 18px;
   margin: 0 10px;
   border-radius: 10px;
-  background: #3447F6;
+  background: #078fd8;
   color: #fff;
   text-decoration: none;
   font-size: 14px;
@@ -190,7 +194,7 @@ margin-top: 50px;
 }
 
 .btn:hover {
-  background: #2c3ce0;
+  background: #0077b6;
 }
 
 .btn.logout {
@@ -203,4 +207,9 @@ margin-top: 50px;
 
 footer {
   grid-area: footer;
+  text-align: center;
+  padding: 15px 0;
+  background: #f8f9fa;
+  font-size: 14px;
+  color: #444;
 }
