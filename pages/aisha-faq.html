@@ -1,82 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
-    <link rel="stylesheet" href="../styles/shared.css">
-    <link rel="stylesheet" href="../styles/aisha0.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ</title>
+<link rel="stylesheet" href="../styles/shared.css">
+<link rel="stylesheet" href="../styles/aisha0.css">
 </head>
 <body>
-  <header>
-    <div class="nav_links">
-      <div class="nav_menu" id="navMenu">
-        <nav class="nav_main">
-          <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
-          <a href="alina-fitness.html">Fitness Programs</a>
-          <a href="karima-membership.html">Membership</a>
-          <a href="karima-schedule.html">Schedule</a>
-          <a href="aisha-faq.html">FAQ</a>
-          <a href="aisha-about.html">About Us</a>
-        </nav>
-      </div>
+<header>
+      <div class="nav_links">
+        <div class="nav_menu" id="navMenu">
+          <nav class="nav_main">
+            <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
+            <a href="alina-fitness.html">Fitness Programs</a>
+            <a href="karima-membership.html">Membership</a>
+            <a href="karima-schedule.html">Schedule</a>
+            <a href="aisha-faq.html">FAQ</a>
+            <a href="aisha-about.html">About Us</a>
+          </nav>
+        </div>
 
-      <div class="nav_right">
-        <nav class="nav_profile">
-          <a href="aliya-profile.html">Profile</a>
-          <a href="aliya-login.html">Login</a>
-        </nav>
-        
-        <button class="nav_toggle" id="navToggle">&#9776;</button>
+        <div class="nav_right">
+          <nav class="nav_profile">
+            <a href="aliya-profile.html">Profile</a>
+            <a href="aliya-login.html">Login</a>
+          </nav>
+          
+          <button class="nav_toggle" id="navToggle">&#9776;</button>
+        </div>
       </div>
+    </header>
+
+<!-- Mobile Navigation Menu (Drops from Top) -->
+<div class="nav-overlay" id="navOverlay">
+
+</div>
+<nav class="mobile-nav" id="mobileNav">
+    <button class="nav-close" id="navCloseBtn">&times;</button>
+    <a href="../index.html">Home</a>
+    <a href="../pages/alina-fitness.html">Fitness Programs</a>
+    <a href="../pages/karima-membership.html">Membership</a>
+    <a href="../pages/karima-schedule.html">Schedule</a>
+    <a href="../pages/aisha-faq.html">FAQ</a>
+    <a href="../pages/aisha-about.html">About Us</a>
+    <a href="../pages/aliya-profile.html" class="active">Profile</a>
+    <a href="../pages/aliya-login.html">Login</a>
+</nav>
+
+<main>
+<!-- FAQ Section -->
+<section class="faq py-5">
+<div class="container">
+<h1 class="faq-heading text-center mb-4 mb-lg-5">Frequently Asked Questions</h1>
+
+<!-- Accordion for FAQ -->
+<section class="task-section">
+    <div class="accordion" id="faqAccordion">
+        <!-- FAQ Item 1 -->
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-target="#faq1">
+                    <span>What is BirQadam?</span>
+                </button>
+            </div>
+            <div id="faq1" class="accordion-content">
+                <div class="accordion-body">
+                    BirQadam is a fitness subscription service that gives you access to dozens of studios, gyms, and activities in your city. Instead of buying separate memberships, you can enjoy everything in one place with full flexibility. Our mission is to make fitness accessible and affordable for everyone.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-target="#faq2">
+                    <span>How does the subscription work?</span>
+                </button>
+            </div>
+            <div id="faq2" class="accordion-content">
+                <div class="accordion-body">
+                    By subscribing to BirQadam, you can book and attend different activities every month. You choose your plan, get credits, and spend them on yoga, swimming, crossfit, dance classes, martial arts, and much more. Each activity costs a certain number of credits based on its duration and intensity.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-target="#faq3">
+                    <span>Can I cancel anytime?</span>
+                </button>
+            </div>
+            <div id="faq3" class="accordion-content">
+                <div class="accordion-body">
+                    Yes, you can cancel your BirQadam subscription anytime in your account settings. You will still have access to the activities until the end of your current billing cycle. There are no hidden fees or long-term contracts required.
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<!-- TASK 3: POPUP FORMS SECTION -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <article class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 mb-md-0">
+                <div class="p-3 p-lg-4 h-100 border rounded shadow-sm">
+                    <h3 class="h5 mb-3">Contact Support</h3>
+                    <p class="mb-3">Our friendly support team is here to help you with any questions about your subscription, bookings, or account.</p>
+                    <div class="task-section">
+                        <button class="btn-popup btn-contact" id="openContactBtn">Get in Touch</button>
+                    </div>
+                </div>
+            </article>
+            <article class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="p-3 p-lg-4 h-100 border rounded shadow-sm">
+                    <h3 class="h5 mb-3">Visit Help Center</h3>
+                    <p class="mb-3">Browse our comprehensive help center for guides, tutorials, and detailed information about using BirQadam.</p>
+                    <div class="task-section">
+                        <button class="btn-popup btn-subscribe" id="openSubscribeBtn">Learn More</button></div>
+                    </div>
+            </article>
+        </div>
+        <!-- Subscribe Modal -->
+        <div id="subscribeModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Subscribe to BirQadam</h2>
+                    <button class="modal-close" type="button" data-close>&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="success-message" id="subscribeSuccess">
+                        ✓ Thank you! Your subscription is confirmed.
+                    </div>
+                    <form id="subscribeForm">
+                        <div class="form-group">
+                            <label for="subscribe-name">Full Name</label>
+                            <input type="text" id="subscribe-name" name="name" placeholder="Aisha Yerbolat" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subscribe-email">Email Address</label>
+                            <input type="email" id="subscribe-email" name="email" placeholder="aisha@sigma.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subscribe-plan">Choose Plan</label>
+                            <select id="subscribe-plan" name="plan" style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 6px; font-family: 'Bond', sans-serif; font-size: 1rem;">
+                                <option value="basic">3 months - 48 330 ₸/month</option>
+                                <option value="standard">6 months - 32 498 ₸/month</option>
+                                <option value="premium">12 months - 22 499 ₸/month</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-modal btn-cancel" data-close>Cancel</button>
+                    <button type="button" class="btn-modal btn-submit" id="submitSubscribe">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Get in Touch</h2>
+                    <button class="modal-close" type="button" data-close>&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="success-message" id="contactSuccess">
+                        ✓ Thank you! We'll get back to you soon.
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Aisha Yerbolau" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" name="email" placeholder="aisha@sigma.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" placeholder="How can we help?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" placeholder="Tell us about your problem or suggestion..." required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-modal btn-cancel" data-close>Cancel</button>
+                    <button type="button" class="btn-modal btn-submit" id="submitContact">Send Message</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
-  <br>
-  <main>
-    <section class="faq">
-      <h1 class="faq-heading">Frequently Asked Questions</h1>
-      <div class="faq-item">
-        <input type="checkbox" id="q1">
-        <label for="q1" class="faq-question">What is BirQadam?</label>
-        <div class="faq-answer">
-          <p>
-            BirQadam is a fitness subscription service that gives you access to dozens of studios, gyms,
-            and activities in your city. Instead of buying separate memberships, you can enjoy everything
-            in one place with full flexibility.
-          </p>
-        </div>
-      </div>
+</section>
 
-      <div class="faq-item">
-        <input type="checkbox" id="q2">
-        <label for="q2" class="faq-question">How does the subscription work?</label>
-        <div class="faq-answer">
-          <p>
-            By subscribing to BirQadam, you can book and attend different activities every month.
-            You choose your plan, get credits, and spend them on yoga, swimming, crossfit, dance classes,
-            martial arts, and much more.
-          </p>
-        </div>
-      </div>
+<!-- Bootstrap Grid Layout Section - Three Columns (Task 3) -->
+<section class="py-5 bg-light">
+<div class="container-fluid px-4 px-lg-5">
+<h2 class="text-center mb-4 mb-lg-5">Popular Topics</h2>
+<div class="row">
+<article class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4 mb-md-0">
+<div class="p-3 p-lg-4 h-100 border rounded shadow-sm bg-white">
+<h3 class="h6 mb-2 mb-lg-3">Membership Plans</h3>
+<p class="mb-0 small">Learn about our flexible subscription options and pricing.</p>
+</div>
+</article>
+<article class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4 mb-md-0">
+<div class="p-3 p-lg-4 h-100 border rounded shadow-sm bg-white">
+<h3 class="h6 mb-2 mb-lg-3">Booking Process</h3>
+<p class="mb-0 small">Discover how easy it is to book your favorite activities.</p>
+</div>
+</article>
+<article class="col-12 col-sm-12 col-md-4 col-lg-4">
+<div class="p-3 p-lg-4 h-100 border rounded shadow-sm bg-white">
+<h3 class="h6 mb-2 mb-lg-3">Partner Studios</h3>
+<p class="mb-0 small">Explore the network of gyms and studios available to you.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
 
-      <div class="faq-item">
-        <input type="checkbox" id="q3">
-        <label for="q3" class="faq-question">Can I cancel anytime?</label>
-        <div class="faq-answer">
-          <p>
-            Yes, you can cancel your BirQadam subscription anytime in your account settings. 
-            You will still have access to the activities until the end of your current billing cycle.
-          </p>
-        </div>
+<footer>
+      <div>
+        <p>(c) Alina Moldabayeva, Karima Shurenova, Aliya Sadvokassova, Aisha Yerbolat</p>
+        <p>SE-2405, BirQadam</p>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div>
-      <p>(c) Alina Moldabayeva, Karima Shurenova, Aliya Sadvokassova, Aisha Yerbolat</p>
-      <p>SE-2405, BirQadam</p>
-    </div>
-  </footer>
+</footer>
+<script src="../scripts/tasks2n3.js"></script>
 </body>
 </html>
