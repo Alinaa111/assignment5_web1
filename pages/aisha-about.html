@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - BirQadam</title>
-    <link rel="stylesheet" href="../styles/shared.css">
-    <link rel="stylesheet" href="../styles/aisha.css">
-    <link href="https://fonts.cdnfonts.com/css/helvetica-now-display" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/bond" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+<link rel="stylesheet" href="../styles/shared.css">
+<link rel="stylesheet" href="../styles/aisha.css">
 </head>
 <body>
-    <header>
+<header>
       <div class="nav_links">
         <div class="nav_menu" id="navMenu">
           <nav class="nav_main">
@@ -33,54 +31,178 @@
         </div>
       </div>
     </header>
-    
-    <main class="main-content">
-        <section class="about">
-            <h1 class="about-heading">BirQadam – One Step Forward</h1>
-            <p class="about-text">
-                BirQadam is a fitness and lifestyle platform inspired by the idea of making sport accessible to everyone. 
-                Just like 1fit, it brings together a wide range of activities – from yoga and swimming to crossfit and martial arts – 
-                all in one place. With BirQadam, staying active becomes simple, flexible, and enjoyable.
-            </p>
-            <div class="sliding-icons">
-              <div class="icon-item">
-                <img src="../images/1asd.png" alt="Yoga">
-                <div class="icon-caption">Martial Arts</div>
-              </div>
-              <div class="icon-item">
-                <img src="../images/2asd.png" alt="Gym">
-                <div class="icon-caption">Gym</div>
-              </div>
-              <div class="icon-item">
-                <img src="../images/3asd.png" alt="Yoga">
-                <div class="icon-caption">Yoga</div>
-              </div>
-              <div class="icon-item">
-                <img src="../images/4asd.png" alt="Swimming">
-                <div class="icon-caption">Swimming</div>
-              </div>
-              <div class="icon-item">
-                <img src="../images/5asd.png" alt="Dance">
-                <div class="icon-caption">Dance</div>
-              </div>
-              <div class="icon-item">
-                <img src="../images/6asd.png" alt="Pilates">
-                <div class="icon-caption">Pilates</div>
-              </div>
-              <div class="icon-item">
-                <img src="../images/7asd.png" alt="Adrenaline sports">
-                <div class="icon-caption">Adrenaline sports</div>
-              </div>
-            </div>
-        </section>
-    </main>
-    
 
-    <footer>
+<!-- Mobile Navigation Menu (Drops from Top) -->
+<div class="nav-overlay" id="navOverlay">
+
+</div>
+<nav class="mobile-nav" id="mobileNav">
+    <button class="nav-close" id="navCloseBtn">&times;</button>
+    <a href="../index.html">Home</a>
+    <a href="../pages/alina-fitness.html">Fitness Programs</a>
+    <a href="../pages/karima-membership.html">Membership</a>
+    <a href="../pages/karima-schedule.html">Schedule</a>
+    <a href="../pages/aisha-faq.html">FAQ</a>
+    <a href="../pages/aisha-about.html">About Us</a>
+    <a href="../pages/aliya-profile.html" class="active">Profile</a>
+    <a href="../pages/aliya-login.html">Login</a>
+</nav>
+<br><br>
+<main class="main-content">
+<!-- Container -->
+<section class="about py-5">
+<div class="container">
+<h1 class="about-heading text-center mb-4">BirQadam – One Step Forward</h1>
+<p class="about-text text-center mx-auto px-3 mb-5">
+BirQadam is a fitness and lifestyle platform inspired by the idea of making sport accessible to everyone.
+Just like 1fit, it brings together a wide range of activities – from yoga and swimming to crossfit and martial arts –
+all in one place. With BirQadam, staying active becomes simple, flexible, and enjoyable.
+</p>
+</div>
+</section>
+
+<section class="carousel-section">
+        <h2>Our Activities</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <!-- Slide 1: Martial Arts -->
+                    <div class="carousel-item active">
+                        <div class="carousel-item-content" style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">
+                            <div class="carousel-item-icon">🥋</div>
+                            <div class="carousel-item-title">Martial Arts</div>
+                        </div>
+                        <div class="carousel-caption">Build strength and discipline</div>
+                    </div>
+
+                    <!-- Slide 2: Gym -->
+                    <div class="carousel-item">
+                        <div class="carousel-item-content" style="background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);">
+                            <div class="carousel-item-icon">💪</div>
+                            <div class="carousel-item-title">Gym</div>
+                        </div>
+                        <div class="carousel-caption">Build muscle and endurance</div>
+                    </div>
+
+                    <!-- Slide 3: Yoga -->
+                    <div class="carousel-item">
+                        <div class="carousel-item-content" style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">
+                            <div class="carousel-item-icon">🧘</div>
+                            <div class="carousel-item-title">Yoga</div>
+                        </div>
+                        <div class="carousel-caption">Find balance and flexibility</div>
+                    </div>
+
+                    <!-- Slide 4: Swimming -->
+                    <div class="carousel-item">
+                        <div class="carousel-item-content" style="background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);">
+                            <div class="carousel-item-icon">🏊</div>
+                            <div class="carousel-item-title">Swimming</div>
+                        </div>
+                        <div class="carousel-caption">Full-body cardio workout</div>
+                    </div>
+
+                    <!-- Slide 5: Dance -->
+                    <div class="carousel-item">
+                        <div class="carousel-item-content" style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">
+                            <div class="carousel-item-icon">💃</div>
+                            <div class="carousel-item-title">Dance</div>
+                        </div>
+                        <div class="carousel-caption">Express yourself through movement</div>
+                    </div>
+
+                    <!-- Slide 6: Pilates -->
+                    <div class="carousel-item">
+                        <div class="carousel-item-content" style="background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);">
+                            <div class="carousel-item-icon">🤸</div>
+                            <div class="carousel-item-title">Pilates</div>
+                        </div>
+                        <div class="carousel-caption">Core strength and posture</div>
+                    </div>
+
+                    <!-- Slide 7: Adrenaline Sports -->
+                    <div class="carousel-item">
+                        <div class="carousel-item-content" style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);">
+                            <div class="carousel-item-icon">🚴</div>
+                            <div class="carousel-item-title">Adrenaline Sports</div>
+                        </div>
+                        <div class="carousel-caption">Push your limits</div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control carousel-prev" id="prevBtn">❮</button>
+                    <button class="carousel-control carousel-next" id="nextBtn">❯</button>
+
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators" id="indicators"></div>
+                </div>
+
+                <!-- Carousel Info -->
+                <div class="carousel-info">
+                    <span class="slide-counter" id="slideCounter">Slide 1 of 7</span>
+                    <span class="auto-play-status">● Auto-playing every 5 seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--  Grid Layout Section (Task 3 - Two Columns) -->
+<section class="py-5">
+<div class="container">
+<h2 class="text-center mb-4 mb-lg-5">Why Choose BirQadam?</h2>
+<div class="row">
+<article class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 mb-md-0">
+<div class="p-3 p-lg-4 h-100 border rounded shadow-sm">
+<h3 class="h4 mb-3">Flexibility & Variety</h3>
+<p class="mb-0">Access dozens of studios and activities with one subscription. Try something new every day – from yoga to martial arts, swimming to crossfit.</p>
+</div>
+</article>
+<article class="col-12 col-sm-12 col-md-6 col-lg-6">
+<div class="p-3 p-lg-4 h-100 border rounded shadow-sm">
+<h3 class="h4 mb-3">Affordable & Simple</h3>
+<p class="mb-0">No need for multiple memberships. One plan, unlimited possibilities. Save money while staying active and healthy.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- Bootstrap Grid Layout Section -->
+<section class="py-5 bg-light">
+<div class="container">
+<h2 class="text-center mb-4 mb-lg-5">What Makes Us Different</h2>
+<div class="row">
+<article class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4 mb-md-0">
+<div class="p-3 p-lg-4 h-100 border rounded shadow-sm bg-white">
+<h3 class="h5 mb-3">Community First</h3>
+<p class="mb-0">Join a vibrant community of fitness enthusiasts who support and motivate each other.</p>
+</div>
+</article>
+<article class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4 mb-md-0">
+<div class="p-3 p-lg-4 h-100 border rounded shadow-sm bg-white">
+<h3 class="h5 mb-3">Expert Instructors</h3>
+<p class="mb-0">Learn from certified professionals who are passionate about helping you reach your goals.</p>
+</div>
+</article>
+<article class="col-12 col-sm-12 col-md-4 col-lg-4">
+<div class="p-3 p-lg-4 h-100 border rounded shadow-sm bg-white">
+<h3 class="h5 mb-3">No Commitment</h3>
+<p class="mb-0">Cancel anytime, no questions asked. We believe fitness should be on your terms.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
       <div>
         <p>(c) Alina Moldabayeva, Karima Shurenova, Aliya Sadvokassova, Aisha Yerbolat</p>
         <p>SE-2405, BirQadam</p>
       </div>
     </footer>
+<script src="../scripts/tasks2n3.js"></script>
 </body>
 </html>
