@@ -8,7 +8,245 @@ main {
   padding: 60px 20px;
   text-align: center;
 }
+/* Basic Reset and Global Styles */
+body {
+    background-color: #ffffff; /* Dark background from the image */
+    color: #f0f0f0; /* Light text color */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Mimic mobile font */
+    margin: 0;
+    padding: 0;
+    /* This is important for the fixed footer/header */
+    padding-bottom: 60px; 
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-top: 60px;   /* добавь это */
+  margin-bottom: 10px;
+  color: #333;
+  position: relative;
+}
+
+
+/* Header Styling (Top bar) */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.app-header h1 {
+    font-size: 44px;
+}
+
+.header-icons .status-indicator {
+    background-color: #f7a900; /* Yellow-ish background for the number */
+    color: #121212;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.page-content {
+    padding: 0 15px; /* Умеренный отступ по бокам для мобильных */
+    background-color: #121212; /* Темный фон для всей страницы на мобильном */
+    padding-bottom: 70px; /* Отступ для футера */
+}
+
+
+/* Membership Card */
+.membership-card-container {
+    padding: 10px 0;
+}
+
+.membership-card {
+    background: linear-gradient(135deg,  #007cf0, #00dfd8); 
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* To contain the logo */
+    min-height: 250px; /* Ensure a good height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+
+.card-details {
+    margin-top: 0; /* Pushes details to the bottom */
+    z-index: 2;
+    padding-bottom: 10px;
+}
+
+.card-details .duration {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.card-details .days-left {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.add-on-button {
+    position: absolute;
+    top: 20px;
+    right: 50px; /* Adjusted for the next-button */
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.next-button {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Don't Share Notice */
+.share-notice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #66a6ff; /* Slightly lighter dark background */
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.share-notice span:first-child {
+    font-size: 16px;
+}
+
+.share-notice .info-icon {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ebebeb; /* Grey-ish color for the info icon */
+}
+
+    /* Action Lists (Списки) */
+    .action-list {
+        margin-top: 40px;
+    }
+
+    .action-list h2 {
+        color: #333; 
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 10px; /* Увеличиваем отступ после заголовка */
+        padding: 0;
+    }
+    
+    .action-item {
+        /* Делаем каждый элемент отдельной карточкой */
+        background-color:#66a6ff; /* Белый фон */
+        border: 1px solid#66a6ff; /* Тонкая серая обводка (рамка) */
+        border-radius: 8px; /* Скругленные углы */
+        margin-bottom: 10px; /* Отступ между карточками */
+        padding: 15px 15px; /* Увеличиваем внутренний отступ */
+        
+        display: flex;
+        align-items: center;
+        
+        border-bottom: none; 
+        color: #ffffff; 
+        
+        /* Добавляем тень, чтобы карточки выделялись */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+        transition: box-shadow 0.2s;
+    }
+    
+    .action-item:hover {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .action-item:last-child {
+        border-bottom: none; /* Это остается, но теперь оно лишнее, т.к. border-bottom: none; выше */
+    }
+
+      .action-item .icon {
+        /* Если вы используете иконку, ей нужен отступ */
+        margin-right: 15px;
+    }
+    
+    .action-item .text {
+        flex-grow: 1;
+        font-size: 16px; 
+    }
+
+    .action-item .arrow {
+        font-size: 20px;
+        color: #fff;
+        opacity: 0.8;
+        
+        margin-left: 10px; 
+        width: auto;
+    }
+    
+    /* Убедимся, что линии-разделители между секциями не конфликтуют */
+    .section-separator {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+
+/* Footer Navigation Bar */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1c1c1c; /* Darker bar */
+    border-top: 1px solid #333333;
+    padding: 10px 0;
+    height: 50px;
+    z-index: 10;
+}
+
+.footer-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #777777;
+    padding: 5px;
+    /* Use emojis for simple icons */
+}
+
+.footer-nav .nav-item.active {
+    color: #ffffff; /* Active/accent color */
+}
 h1 {
   font-size: 2.6rem;
   margin-bottom: 40px;
@@ -145,7 +383,14 @@ button:hover {
   height: auto;    /* keep proportions */
   z-index: 2;      /* make sure image is above gradient */
 }
-
+.cornerr-image {
+  position: absolute;
+  top: 0;       /* distance from the top */
+  left: 0;      /* distance from the left */
+  width: 200px;    /* resize image */
+  height: auto;    /* keep proportions */
+  z-index: 2;      /* make sure image is above gradient */
+}
 .corner-imagee {
   position: absolute;
   top: 25px;       /* distance from the top */
@@ -155,3 +400,21 @@ button:hover {
   z-index: 2;      /* make sure image is above gradient */
 }
 
+.membership-card-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 60px;   /* было 80px — стало 20px */
+  min-height: 500px;
+}
+
+/* Membership Card — больше и с тенями */
+.membership-card {
+  max-width: 600px;             /* карточка шире */
+  width: 100%;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #007cf0, #00dfd8);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  padding: 30px 25px;
+  position: relative;
+  overflow: hidden;
+}
