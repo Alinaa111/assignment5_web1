@@ -4,29 +4,29 @@
   <meta charset="UTF-8">
   <title>Home</title>
   <link rel="stylesheet" href="styles/shared.css">
+  <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
   <header>
     <div class="nav_links">
-      <div class="nav_menu" id="navMenu">
-        <nav class="nav_main">
-          <a href="index.html"><img src="images/logo-2.png" alt="logotype"></a>
-          <a href="pages/alina-fitness.html">Fitness Programs</a>
-          <a href="pages/karima-membership.html">Membership</a>
-          <a href="pages/karima-schedule.html">Schedule</a>
-          <a href="pages/aisha-faq.html">FAQ</a>
-          <a href="pages/aisha-about.html">About Us</a>
-        </nav>
-      </div>
+      <a href="index.html"><img src="images/logo-2.png" alt="logotype"></a>
 
-      <div class="nav_right">
-        <nav class="nav_profile">
-          <a href="pages/aliya-profile.html">Profile</a>
-          <a href="pages/aliya-login.html">Login</a>
-        </nav>
+      <button class="nav_toggle" id="navToggle">&#9776;</button>
 
-        <button class="nav_toggle" id="navToggle">&#9776;</button>
-      </div>
+      <nav class="nav_menu" id="navMenu">
+        <ul class="nav_main">
+          <li><a href="pages/alina-fitness.html">Fitness Programs</a></li>
+          <li><a href="pages/karima-membership.html">Membership</a></li>
+          <li><a href="pages/karima-schedule.html">Schedule</a></li>
+          <li><a href="pages/aisha-faq.html">FAQ</a></li>
+          <li><a href="pages/aisha-about.html">About Us</a></li>
+        </ul>
+
+        <ul class="nav_right">
+          <li><a href="pages/aliya-profile.html">Profile</a></li>
+          <li><a href="pages/aliya-login.html">Login</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
   
@@ -148,5 +148,6 @@
   </footer>
 
   <script src="scripts/task5.js"></script>
+  <script src="scripts/toggle_button.js"></script>
 </body>
 </html>
