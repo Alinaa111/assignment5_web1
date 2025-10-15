@@ -120,12 +120,15 @@ main {
 
 /*  FOOTER  */
 footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
-  padding: 15px 0;
-  background: #023047;
-  color: #fff;
+  padding: 10px;
+  background: #f3f4f6;
+  color: #555;
   font-size: 14px;
-  margin-top: auto;
+  border-top: 1px solid #ddd;
 }
 
 /*  MEDIA QUERIES  */
