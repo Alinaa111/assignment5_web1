@@ -1,21 +1,21 @@
-// ============================================
+
 // TASK 2: ACCORDION FUNCTIONALITY
-// ============================================
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Get all accordion buttons
+    // accordion buttons
     const accordionButtons = document.querySelectorAll('.accordion-button');
 
-    // Add click event listener to each button
+    // click event listener for each button
     accordionButtons.forEach(button => {
         button.addEventListener('click', function () {
-            // Get the target content ID from data-target attribute
+            // get the target content ID from data-target attribute
             const targetId = this.getAttribute('data-target');
             const contentElement = document.querySelector(targetId);
 
-            // Check if this accordion item is already open
+            // check if this accordion item is already open
             const isOpen = contentElement.classList.contains('show');
 
-            // Close all other accordion items (optional for single-open behavior)
+            // close all other accordion items
             document.querySelectorAll('.accordion-content').forEach(content => {
                 content.classList.remove('show');
             });
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 btn.classList.add('collapsed');
             });
 
-            // Toggle current item if it wasn't open
+            // toggle current item if it wasn't open
             if (!isOpen) {
                 contentElement.classList.add('show');
                 this.classList.remove('collapsed');
@@ -33,35 +33,34 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// ============================================
 // TASK 3: POPUP MODAL FUNCTIONALITY
-// ============================================
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Modal elements
+    // modal elements
     const subscribeModal = document.getElementById('subscribeModal');
     const contactModal = document.getElementById('contactModal');
     const openSubscribeBtn = document.getElementById('openSubscribeBtn');
     const openContactBtn = document.getElementById('openContactBtn');
 
-    // Open Subscribe Modal
+    // open 'Subscribe' Modal
     openSubscribeBtn.addEventListener('click', function () {
         subscribeModal.classList.add('show');
         document.body.style.overflow = 'hidden';
     });
 
-    // Open Contact Modal
+    // open 'Contact' Modal
     openContactBtn.addEventListener('click', function () {
         contactModal.classList.add('show');
         document.body.style.overflow = 'hidden';
     });
 
-    // Close modal function
+    // close modal function
     function closeModal(modal) {
         modal.classList.remove('show');
         document.body.style.overflow = 'auto';
     }
 
-    // Close buttons in modals
+    // close buttons in modals
     document.querySelectorAll('[data-close]').forEach(closeBtn => {
         closeBtn.addEventListener('click', function () {
             const modal = this.closest('.modal');
@@ -69,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Close modal when clicking outside (on the overlay)
+    // close modal when clicking outside
     window.addEventListener('click', function (event) {
         if (event.target === subscribeModal) {
             closeModal(subscribeModal);
@@ -79,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Close modal on Escape key
+    // close modal when esc
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
             closeModal(subscribeModal);
@@ -87,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Submit Subscribe Form
+    // submit 'Subscribe'
     document.getElementById('submitSubscribe').addEventListener('click', function (event) {
         const form = document.getElementById('subscribeForm');
         if (form.checkValidity() === false) {
@@ -97,18 +96,18 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Show success message
+        // show success message
         document.getElementById('subscribeSuccess').classList.add('show');
         form.reset();
 
-        // Close modal after 2 seconds
+        // close modal after 2 seconds
         setTimeout(function () {
             closeModal(subscribeModal);
             document.getElementById('subscribeSuccess').classList.remove('show');
         }, 2000);
     });
 
-    // Submit Contact Form
+    // submit 'Contact'
     document.getElementById('submitContact').addEventListener('click', function (event) {
         const form = document.getElementById('contactForm');
         if (form.checkValidity() === false) {
@@ -118,19 +117,19 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Show success message
+        // show success message
         document.getElementById('contactSuccess').classList.add('show');
         form.reset();
 
-        // Close modal after 2 seconds
+        // close modal after 2 seconds
         setTimeout(function () {
             closeModal(contactModal);
             document.getElementById('contactSuccess').classList.remove('show');
         }, 2000);
     });
 });
-// besides tasks
-// Carousel Variables
+// ======== CAROUSEL ===============================================
+// carousel vars
 const items = document.querySelectorAll('.carousel-item');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
@@ -142,7 +141,7 @@ let currentSlide = 0;
 const totalSlides = items.length;
 let autoPlayInterval;
 
-// Create Indicators
+// indicators
 for (let i = 0; i < totalSlides; i++) {
 	const indicator = document.createElement('div');
 	indicator.className = 'indicator';
@@ -153,7 +152,7 @@ for (let i = 0; i < totalSlides; i++) {
 
 const indicators = document.querySelectorAll('.indicator');
 
-// Show Slide Function
+// show slide
 function showSlide(n) {
 	items.forEach(item => item.classList.remove('active'));
 	indicators.forEach(ind => ind.classList.remove('active'));
@@ -163,37 +162,37 @@ function showSlide(n) {
 	slideCounter.textContent = `Slide ${currentSlide + 1} of ${totalSlides}`;
 }
 
-// Next Slide
+// next slide
 function nextSlide() {
 	currentSlide = (currentSlide + 1) % totalSlides;
 	showSlide(currentSlide);
 }
 
-// Previous Slide
+// previous slide
 function prevSlide() {
 	currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
 	showSlide(currentSlide);
 }
 
-// Go to Specific Slide
+// go to slide
 function goToSlide(n) {
 	currentSlide = n;
 	showSlide(currentSlide);
 	resetAutoPlay();
 }
 
-// Auto-Play Function
+// auto-play
 function startAutoPlay() {
 	autoPlayInterval = setInterval(nextSlide, 5000);
 }
 
-// Reset Auto-Play Timer
+// reset auto-play timer
 function resetAutoPlay() {
 	clearInterval(autoPlayInterval);
 	startAutoPlay();
 }
 
-// Event Listeners
+// event listeners
 prevBtn.addEventListener('click', () => {
 	prevSlide();
 	resetAutoPlay();
@@ -204,7 +203,7 @@ nextBtn.addEventListener('click', () => {
 	resetAutoPlay();
 });
 
-// Pause on Hover
+// pause on hover
 carousel.addEventListener('mouseenter', () => {
 	clearInterval(autoPlayInterval);
 });
@@ -213,5 +212,5 @@ carousel.addEventListener('mouseleave', () => {
 	startAutoPlay();
 });
 
-// Start Auto-Play on Load
+// start auto-play on load
 startAutoPlay();
