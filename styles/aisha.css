@@ -14,15 +14,8 @@ body {
   min-height: 100vh;
   background-color: #ffffff;
   color: #161618;
-  font-family: 'Bond', sans-serif;
 }
 
-/* Header */
-header #navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 /* Main content area */
 .main-content {
@@ -96,14 +89,12 @@ section {
 
 /* About section styling */
 .about-heading {
-  font-family: 'Helvetica Now Display', sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
   color: #161618;
 }
 
 .about-text {
-  font-family: 'Bond', sans-serif;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #46464A;
@@ -124,135 +115,6 @@ section {
   background-color: #ffffff !important;
 }
 
-/* ==================== TOP NAVIGATION ==================== */
-header {
-    background-color: #ffffff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-family: 'Helvetica Now Display', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #3447F6;
-}
-
-/* Hamburger Menu Button */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #3447F6;
-    transition: all 0.3s ease;
-}
-
-.hamburger:hover {
-    color: #2537d5;
-}
-
-/* Navigation Dropdown from Top */
-nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #161618;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    font-size: 0.95rem;
-}
-
-nav a:hover,
-nav a.active {
-    color: #3447F6;
-}
-
-/* Mobile Navigation Menu */
-.mobile-nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #ffffff;
-    flex-direction: column;
-    padding: 80px 20px 20px 20px;
-    gap: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.3s ease;
-    max-height: 80vh;
-    overflow-y: auto;
-    z-index: 200;
-}
-
-.mobile-nav.open {
-    display: flex;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.mobile-nav a {
-    padding: 12px 0;
-    display: block;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 1.1rem;
-}
-
-/* Close button in mobile nav */
-.nav-close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #3447F6;
-}
-
-/* Overlay when mobile nav is open */
-.nav-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 150;
-}
-
-.nav-overlay.open {
-    display: block;
-}
-
 /* ==================== CAROUSEL ==================== */
 .carousel-section {
     max-width: 1000px;
@@ -264,7 +126,6 @@ nav a.active {
 }
 
 .carousel-section h2 {
-    font-family: 'Helvetica Now Display', sans-serif;
     font-size: 2.2rem;
     margin-bottom: 40px;
     color: #161618;
@@ -333,7 +194,6 @@ nav a.active {
 .carousel-item-title {
     font-size: 1.8rem;
     font-weight: 700;
-    font-family: 'Helvetica Now Display', sans-serif;
 }
 
 .carousel-caption {
@@ -503,7 +363,6 @@ nav a.active {
 .h4,
 .h5,
 .h6 {
-  font-family: 'Helvetica Now Display', sans-serif;
   font-weight: 600;
 }
 
