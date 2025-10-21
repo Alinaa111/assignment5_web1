@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     password: document.getElementById("password"),
     confirmPassword: document.getElementById("confirmPassword"),
   };
-
+ 
   for (const key in fields) {
     const msg = document.createElement("small");
     msg.className = "error-text";
