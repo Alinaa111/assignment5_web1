@@ -22,4 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("theme", "light");
         }
     })
+
+    // Example with changing style through JS
+    const hero = document.querySelector(".hero");
+    hero.style.transform = "scale(1.02)";
+    hero.style.transition = "transform 0.3s ease";
+
 });
