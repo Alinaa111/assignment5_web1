@@ -8,130 +8,91 @@
   <link rel="stylesheet" href="../styles/karima-membership.css">
 </head>
 <body>
-    <header>
-        <div class="nav_links">
-        <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
-
-        <button class="nav_toggle" id="navToggle">&#9776;</button>
-
-        <nav class="nav_menu" id="navMenu">
-            <ul class="nav_main">
-            <li><a href="alina-fitness.html">Fitness Programs</a></li>
-            <li><a href="karima-membership.html">Membership</a></li>
-            <li><a href="karima-schedule.html">Schedule</a></li>
-            <li><a href="aisha-faq.html">FAQ</a></li>
-            <li><a href="aisha-about.html">About Us</a></li>
-            </ul>
-
-            <ul class="nav_right">
-            <li><a href="aliya-profile.html">Profile</a></li>
-            <li><a href="aliya-login.html">Login</a></li>
-            </ul>
+  <header>
+    <div class="nav_links">
+      <div class="nav_menu" id="navMenu">
+        <nav class="nav_main">
+          <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
+          <a href="alina-fitness.html">Fitness Programs</a>
+          <a href="karima-membership.html">Membership</a>
+          <a href="karima-schedule.html">Schedule</a>
+          <a href="aisha-faq.html">FAQ</a>
+          <a href="aisha-about.html">About Us</a>
         </nav>
-        </div>
-    </header>
+      </div>
+
+      <div class="nav_right">
+        <nav class="nav_profile">
+          <a href="aliya-profile.html">Profile</a>
+          <a href="aliya-login.html">Login</a>
+        </nav>
+        <button class="nav_toggle" id="navToggle">&#9776;</button>
+      </div>
+    </div>
+  </header>
   
   <main>
-   <header class="app-header">
-        <h1>My membership</h1>
-        <div class="header-icons">
-            <span class="icon-placeholder">🔔</span> 
-            <span class="icon-placeholder status-indicator">69</span>
-        </div>
+    <header class="app-header">
+      <h1 id="mainTitle" class="black-text">My membership</h1>
     </header>
 
-    <main class="membership-page">
-        
-        <section class="membership-card-container">
-            <div class="membership-card">
-                 <img src="../images/365.png" alt="12 months membership" class="cornerr-image">
- <div class="card-details">
-                    <p class="duration">12 months</p>
-                    <p class="days-left">364 days left</p>
-                </div>
-                <button class="add-on-button">B 30 days</button>
-                <button class="next-button">→</button>
-            </div>
-        </section>
+    <section class="membership-card-container">
+      <div class="membership-card">
+        <img src="../images/365.png" alt="12 months membership" class="cornerr-image">
+        <div class="card-details">
+  <p id="duration" class="duration">12 months</p>
+  <p id="daysLeftText" class="days-left">364 days left</p>
+</div>
 
-        <div class="share-notice">
-            <span>Don't share your membership</span>
-            <span class="info-icon">ⓘ</span>
-        </div>
-        
-        <section class="action-list">
-            <h2>Earn bonus days</h2>
-            <a href="#" class="action-item">
-                <span class="icon"></span> <span class="text">Gift a free trial</span>
-                <span class="arrow">></span>
-            </a>
-            <a href="#" class="action-item">
-                <span class="icon"></span> <span class="text">Share promo code</span>
-                <span class="arrow">></span>
-            </a>
-        </section>
+        <button id="addDaysButton" class="add-on-button">+30 days</button>
 
-        <section class="action-list">
-            <h2>Buy membership and add-ons</h2>
-            <a href="#" class="action-item">
-                <span class="icon"></span> <span class="text">Buy a membership</span>
-                <span class="arrow">></span>
-            </a>
-            <a href="#" class="action-item">
-                <span class="icon"></span> <span class="text">Activate promo code</span>
-                <span class="arrow">></span>
-            </a>
-        </section>
-
-    </main>
-    
-</body>
-</html>
-    <h1>Choose your membership</h1>
-    <p class="subtitle">There are free guests for friends in each membership</p>
-
-    <div class="membership-container">
-      <div class="card green">
-        <img src="../images/90.png" alt="3 months membership" class="corner-imagee">
-        <h2>3 month</h2>
-        <p class="price">48 330 ₸</p>
-        <p class="per month">per month</p>
-        <ul>
-          <li>144+ studios</li>
-          <li>5 guests</li>
-        </ul>
-        <button>Purchase</button>
+        <button class="next-button">→</button>
       </div>
+    </section>
 
-      <div class="card pink">
-        <img src="../images/180.png" alt="6 months membership" class="corner-imagee">
-        <h2>6 month</h2>
-        <p class="price">32 498 ₸</p>
-        <p class="per month">per month</p>
-        <ul>
-          <li>144+ studios</li>
-          <li>8 guests</li>
-        </ul>
-        <button>Purchase</button>
-      </div>
-
-      <div class="card blue">
-        <img src="../images/365.png" alt="12 months membership" class="corner-image">
-        <h2>12 month</h2>
-        <p class="price">22 499 ₸</p>
-        <p class="per">per month</p>
-        <ul>
-          <li>144+ studios</li>
-          <li>12 guests</li>
-        </ul>
-        <button>Purchase</button>
-      </div>
+    <div class="share-notice">
+      <span id="shareText" class="black-text">Don't share your membership</span>
+      <span class="info-icon">ⓘ</span>
     </div>
+    <!-- 🔸 Language Container -->
+    <div class="language-container">
+      <label for="language" id="chooseLangLabel">Change Language:</label>
+      <select id="language">
+        <option value="english">English</option>
+        <option value="russian">Russian</option>
+        <option value="kazakh">Kazakh</option>
+      </select>
 
-    <!-- 🔸 Task 4 Button -->
-    <div class="change-color mt-4">
+      <p id="greeting">Welcome to Membership Page!</p>
+
       <button id="colorButton">Change Background Color</button>
     </div>
+
+    <section class="action-list">
+      <h2 id="bonusTitle" class="black-text">Earn bonus days</h2>
+      <a href="#" class="action-item">
+        <span class="icon"></span> <span class="text" id="giftText">Gift a free trial</span>
+        <span class="arrow">></span>
+      </a>
+      <a href="#" class="action-item">
+        <span class="icon"></span> <span class="text" id="promoText">Share promo code</span>
+        <span class="arrow">></span>
+      </a>
+    </section>
+
+    <section class="action-list">
+      <h2 id="buyTitle" class="black-text">Buy membership and add-ons</h2>
+      <a href="#" class="action-item">
+        <span class="icon"></span> <span class="text" id="buyText">Buy a membership</span>
+        <span class="arrow">></span>
+      </a>
+      <a href="#" class="action-item">
+        <span class="icon"></span> <span class="text" id="activateText">Activate promo code</span>
+        <span class="arrow">></span>
+      </a>
+    </section>
+
+    
   </main>
 
   <footer>
@@ -141,8 +102,8 @@
     </div>
   </footer>
 
-  <!-- 🔸 Link JS -->
   <script src="../scripts/task4.js"></script>
-  <script src="../scripts/toggle_button.js"></script>
+  <script src="../scripts/task6.js"></script>
+  <script src="../scripts/theme-toggle.js"></script>
 </body>
 </html>
