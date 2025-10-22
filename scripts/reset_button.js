@@ -6,6 +6,5 @@ document.addEventListener("DOMContentLoaded", () => {
       input.value = "";
     });
     document.getElementById("error-message").textContent = "";
-    alert("Form has been reset!");
   });
 });
