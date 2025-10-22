@@ -1,3 +1,4 @@
+/* Cards of Fitness programs */
 .fitness-programs {
   padding: 0 20px;
   max-width: 1200px;
@@ -83,4 +84,73 @@
 @media (max-width: 575px) {
   .program-card h2 { font-size: 1.4rem; }
   .program-card p { font-size: 1rem; }
+}
+
+
+/* DARK THEME STYLES*/
+body.dark-theme {
+  background-color: #0b1724;
+  color: #e0f2fe;
+}
+
+dark-theme .fitness-programs {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.dark-theme .fitness-programs h1 {
+  color: #f5f5f5;
+}
+
+.dark-theme .program-card {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+.dark-theme .program-card.water { background: linear-gradient(135deg, #005b99, #00a0a0); }
+.dark-theme .program-card.gym { background: linear-gradient(135deg, #b42e2e, #831a57); }
+.dark-theme .program-card.stretching { background: linear-gradient(135deg, #c47c00, #e0b000); }
+.dark-theme .program-card.yoga { background: linear-gradient(135deg, #5b1bb1, #2b0073); }
+.dark-theme .program-card.intensive { background: linear-gradient(135deg, #b04560, #4b50a5); }
+.dark-theme .program-card.martial_arts { background: linear-gradient(135deg, #0c7267, #2dbf71); }
+
+
+/* Mobile */
+@media (max-width: 575px) {
+  .program-card h2 { font-size: 1.4rem; }
+  .program-card p { font-size: 1rem; }
+}
+
+/* THEME TOGGLE BUTTON */
+.theme-button {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 30px
+}
+
+.theme-toggle {
+  background: #00b4d8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 1100;
+}
+
+.theme-toggle:hover {
+  background: #3ed2f8;
+  transform: translateY(-2px);
+}
+
+body.dark-theme .theme-toggle {
+  background: #222;
+  color: #e6edf3;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+}
+body.dark-theme .theme-toggle:hover {
+  background: #333;
 }

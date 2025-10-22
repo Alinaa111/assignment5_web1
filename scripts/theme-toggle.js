@@ -23,9 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    // Example with changing style through JS
-    const hero = document.querySelector(".hero");
-    hero.style.transform = "scale(1.02)";
-    hero.style.transition = "transform 0.3s ease";
-
+    // Example with changing  style through JS
+    const title = document.querySelector(".fitness-programs h1");
+    title.style.transition = "color 0.4s ease";
+    title.style.color = "#cdaa1fff"; 
 });
