@@ -1,18 +1,3 @@
-// const quoteButton = document.querySelector(".quote-but")
-// const quoteDisplay = document.querySelector("#quote");
-
-// quoteButton.addEventListener("click", async () => {
-//     try {
-//         const response = await fetch("https://api.quotable.io/random")
-//         const data = await response.json();
-//         quoteDisplay.textContent = `"${data.content}" - ${data.author}`;
-//     }
-//     catch (error) {
-//         quoteDisplay.textContent = "Failed to load a new quote. Please try again.";
-//     }
-// });
-
-
 const quotes = [
     `"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill`,
     `"The only way to prove that you're a good sport is to lose." `,
