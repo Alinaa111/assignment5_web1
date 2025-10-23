@@ -13,10 +13,17 @@ const elements = {
   activateText: document.getElementById("activateText"),
   greeting: document.getElementById("greeting"),
   colorButton: document.getElementById("colorButton"),
+  addDaysButton: document.getElementById("addDaysButton"),
   duration: document.getElementById("duration"),
   daysLeftText: document.getElementById("daysLeftText"),
-  addDaysButton: document.getElementById("addDaysButton"),
 
+  // NEW for second section
+  chooseMembershipTitle: document.querySelector(".choose-membership h1"),
+  chooseMembershipSubtitle: document.querySelector(".choose-membership .subtitle"),
+  purchaseButtons: document.querySelectorAll(".choose-membership button"),
+  monthLabels: document.querySelectorAll(".choose-membership h2"),
+  perTexts: document.querySelectorAll(".choose-membership .per"),
+  guestsLists: document.querySelectorAll(".choose-membership ul li:last-child"),
 };
 
 languageSelect.addEventListener("change", () => {
@@ -35,10 +42,24 @@ languageSelect.addEventListener("change", () => {
       elements.activateText.textContent = "Activate promo code";
       elements.greeting.textContent = "Welcome to Membership Page!";
       elements.colorButton.textContent = "Change Background Color";
+      elements.addDaysButton.textContent = "+30 days";
       elements.duration.textContent = "12 months";
       elements.daysLeftText.textContent = "364 days left";
-      elements.addDaysButton.textContent = "+30 days"; // English
 
+      elements.chooseMembershipTitle.textContent = "Choose your membership";
+      elements.chooseMembershipSubtitle.textContent =
+        "There are free guests for friends in each membership";
+
+      elements.monthLabels[0].textContent = "3 months";
+      elements.monthLabels[1].textContent = "6 months";
+      elements.monthLabels[2].textContent = "12 months";
+
+      elements.perTexts.forEach((el) => (el.textContent = "per month"));
+      elements.guestsLists[0].textContent = "5 guests";
+      elements.guestsLists[1].textContent = "8 guests";
+      elements.guestsLists[2].textContent = "12 guests";
+
+      elements.purchaseButtons.forEach((btn) => (btn.textContent = "Purchase"));
       break;
 
     case "russian":
@@ -53,10 +74,24 @@ languageSelect.addEventListener("change", () => {
       elements.activateText.textContent = "Активировать промокод";
       elements.greeting.textContent = "Добро пожаловать на страницу членства!";
       elements.colorButton.textContent = "Изменить цвет фона";
+      elements.addDaysButton.textContent = "+30 дней";
       elements.duration.textContent = "12 месяцев";
       elements.daysLeftText.textContent = "Осталось 364 дня";
-      elements.addDaysButton.textContent = "+30 дней"; // Russian
 
+      elements.chooseMembershipTitle.textContent = "Выберите членство";
+      elements.chooseMembershipSubtitle.textContent =
+        "Для друзей предусмотрены бесплатные приглашения в каждом членстве";
+
+      elements.monthLabels[0].textContent = "3 месяца";
+      elements.monthLabels[1].textContent = "6 месяцев";
+      elements.monthLabels[2].textContent = "12 месяцев";
+
+      elements.perTexts.forEach((el) => (el.textContent = "в месяц"));
+      elements.guestsLists[0].textContent = "5 гостей";
+      elements.guestsLists[1].textContent = "8 гостей";
+      elements.guestsLists[2].textContent = "12 гостей";
+
+      elements.purchaseButtons.forEach((btn) => (btn.textContent = "Купить"));
       break;
 
     case "kazakh":
@@ -71,10 +106,24 @@ languageSelect.addEventListener("change", () => {
       elements.activateText.textContent = "Промокодты белсендіру";
       elements.greeting.textContent = "Мүшелік бетіне қош келдіңіз!";
       elements.colorButton.textContent = "Фонның түсін өзгерту";
+      elements.addDaysButton.textContent = "+30 күн";
       elements.duration.textContent = "12 ай";
-      elements.daysLeftText.textContent = "364 күн қалды";
-      elements.addDaysButton.textContent = "+30 күн"; // Kazakh
+      elements.daysLeftText.textContent = "Қалғаны 364 күн";
 
+      elements.chooseMembershipTitle.textContent = "Мүшелікті таңдаңыз";
+      elements.chooseMembershipSubtitle.textContent =
+        "Әр мүшелікте достар үшін тегін қонақтар бар";
+
+      elements.monthLabels[0].textContent = "3 ай";
+      elements.monthLabels[1].textContent = "6 ай";
+      elements.monthLabels[2].textContent = "12 ай";
+
+      elements.perTexts.forEach((el) => (el.textContent = "айына"));
+      elements.guestsLists[0].textContent = "5 қонақ";
+      elements.guestsLists[1].textContent = "8 қонақ";
+      elements.guestsLists[2].textContent = "12 қонақ";
+
+      elements.purchaseButtons.forEach((btn) => (btn.textContent = "Сатып алу"));
       break;
   }
 });
