@@ -101,7 +101,7 @@ h1::after {
 }
 
 /* Button */
-button {
+main button {
   background: linear-gradient(135deg, #ffffff, #f8f8f8);
   color: rgb(0, 0, 0);
   border: none;
@@ -112,8 +112,55 @@ button {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-button:hover {
+main button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
+
+
+/* ______________________________________ */
+/* Dark Theme */
+body.dark-theme h1 {
+  color: #f8f8f8;
+}
+
+body.dark-theme h1::after {
+  background: linear-gradient(90deg, #ffb300, #ff7043);
+}
+
+body.dark-theme .subtitle {
+  color: #ccc;
+}
+
+/* Card dark mode */
+body.dark-theme .card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .card::before {
+  background: rgba(255,255,255,0.05);
+}
+
+body.dark-theme .card h2 {
+  color: #ffcc80;
+}
+
+body.dark-theme .card p {
+  color: #ddd;
+}
+
+/* Button dark mode */
+body.dark-theme button {
+  background: linear-gradient(135deg, #333, #444);
+  color: #f8f8f8;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme button:hover {
+  background: linear-gradient(135deg, #444, #555);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}

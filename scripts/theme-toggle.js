@@ -1,30 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("theme-toggle");
+    const navbarButton = document.querySelector(".theme-button");
+    const floatingButton = document.querySelector(".theme-toggle");
     const body = document.body;
 
     // Loading saved theme
     const currentTheme = localStorage.getItem("theme");
-    if (currentTheme == "dark") {
+    if (currentTheme === "dark") {
         body.classList.add("dark-theme");
-        toggleButton.textContent = "🌞 Light Mode";
+        if (navbarButton) navbarButton.textContent = "🌞 Light Mode";
+        if (floatingButton) floatingButton.textContent = "🌞";
+    } else {
+        if (navbarButton) navbarButton.textContent = "🌙 Dark Mode";
+        if (floatingButton) floatingButton.textContent = "🌙";
     }
 
-    // Toggle theme on click
-    toggleButton.addEventListener("click", () => {
+    // Switch function
+    function toggleTheme() {
         body.classList.toggle("dark-theme");
-        
+
         if (body.classList.contains("dark-theme")) {
-            toggleButton.textContent = "🌞 Light Mode";
+            if (navbarButton) navbarButton.textContent = "🌞 Light Mode";
+            if (floatingButton) floatingButton.textContent = "🌞";
             localStorage.setItem("theme", "dark");
-        }
-        else {
-            toggleButton.textContent = "🌙 Dark Mode";
+        } else {
+            if (navbarButton) navbarButton.textContent = "🌙 Dark Mode";
+            if (floatingButton) floatingButton.textContent = "🌙";
             localStorage.setItem("theme", "light");
         }
-    })
+    }
 
-    // Example with changing  style through JS
-    const title = document.querySelector(".fitness-programs h1");
-    title.style.transition = "color 0.4s ease";
-    title.style.color = "#cdaa1fff"; 
+    // Adding click handlers
+    if (navbarButton) navbarButton.addEventListener("click", toggleTheme);
+    if (floatingButton) floatingButton.addEventListener("click", toggleTheme);
 });

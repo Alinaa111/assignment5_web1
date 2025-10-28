@@ -164,3 +164,72 @@ footer {
   font-size: 14px;
   color: #444;
 }
+
+
+/* ____________________________ */
+/* ===== DARK THEME ===== */
+/* Sidebar */
+body.dark-theme aside {
+  background: #161a23;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-theme aside nav ul li a {
+  color: #93c5fd;
+}
+
+body.dark-theme aside nav ul li a:hover,
+body.dark-theme aside nav ul li a.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Main */
+body.dark-theme main {
+  color: #f3f4f6;
+}
+
+/* Login box */
+body.dark-theme .login-box {
+  background: #1e293b;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-theme .login-box h2 {
+  color: #60a5fa;
+}
+
+body.dark-theme .login-box input {
+  background: #0f172a;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+}
+
+body.dark-theme .login-box input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+/* Buttons */
+body.dark-theme .btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+body.dark-theme .btn:hover {
+  background: #1d4ed8;
+}
+
+/* Extra links */
+body.dark-theme .extra {
+  color: #9ca3af;
+}
+
+body.dark-theme .extra a {
+  color: #60a5fa;
+}
+
+body.dark-theme .extra a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}

@@ -256,3 +256,97 @@ form .btn {
   box-shadow: 0 0 20px rgba(52, 152, 219, 0.7);
 }
 
+
+
+/* _________________________________ */
+/* Dark Theme */
+/* Sidebar */
+body.dark-theme aside {
+  background: #161a23;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-theme aside nav ul li a {
+  color: #93c5fd;
+}
+
+body.dark-theme aside nav ul li a:hover,
+body.dark-theme aside nav ul li a.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+
+/* Main area */
+body.dark-theme main {
+  background: transparent;
+}
+
+body.dark-theme .register-box {
+  background: #1e293b;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-theme .register-box h2 {
+  color: #60a5fa;
+}
+
+body.dark-theme .register-box input {
+  background: #0f172a;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+}
+
+body.dark-theme .register-box input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+/* Buttons */
+body.dark-theme .btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+body.dark-theme .btn:hover {
+  background: #1d4ed8;
+}
+
+body.dark-theme #soundBtn {
+  background-color: #0077b6;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme #soundBtn:hover {
+  background-color: #0096c7;
+}
+
+/* Links & Text */
+body.dark-theme .extra {
+  color: #9ca3af;
+}
+
+body.dark-theme .extra a {
+  color: #60a5fa;
+}
+
+body.dark-theme .extra a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+/* Error states */
+body.dark-theme .error-text {
+  color: #ff6b6b;
+}
+
+body.dark-theme input.error {
+  border: 1.5px solid #ff6b6b;
+  background-color: #2b0000;
+}
+
+/* Image adjustments */
+body.dark-theme .image {
+  filter: brightness(0.85);
+}
