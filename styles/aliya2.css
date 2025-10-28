@@ -213,3 +213,107 @@ footer {
   font-size: 14px;
   color: #444;
 }
+
+
+
+/* ___________________________ */
+/* ===== DARK THEME ===== */
+/* Sidebar */
+body.dark-theme aside {
+  background: #161a23;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-theme aside nav ul li a {
+  color: #93c5fd;
+}
+
+body.dark-theme aside nav ul li a:hover,
+body.dark-theme aside nav ul li a.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Main */
+body.dark-theme main {
+  color: #e5e7eb;
+}
+
+/* Profile Card */
+body.dark-theme .profile-card {
+  background: #1e293b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-theme .avatar {
+  border-color: #3b82f6;
+}
+
+body.dark-theme .name {
+  color: #93c5fd;
+}
+
+body.dark-theme .status {
+  color: #9ca3af;
+}
+
+body.dark-theme .profile-info {
+  color: #d1d5db;
+}
+
+/* Progress Card */
+body.dark-theme .progress-card {
+  background: #1e293b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-theme .progress-card h3 {
+  color: #60a5fa;
+}
+
+body.dark-theme .stat-box {
+  background: #0f172a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-theme .stat-box h4 {
+  color: #3b82f6;
+}
+
+body.dark-theme .stat-box p {
+  color: #cbd5e1;
+}
+
+/* Achievements */
+body.dark-theme .achievements-card {
+  background: #1e293b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-theme .achievements-card h3 {
+  color: #60a5fa;
+}
+
+body.dark-theme .achievement {
+  background: #0f172a;
+  color: #e2e8f0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Buttons */
+body.dark-theme .btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+body.dark-theme .btn:hover {
+  background: #1d4ed8;
+}
+
+body.dark-theme .btn.logout {
+  background: #dc2626;
+}
+
+body.dark-theme .btn.logout:hover {
+  background: #b91c1c;
+}

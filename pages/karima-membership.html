@@ -10,39 +10,41 @@
 <body>
   <header>
         <div class="nav_links">
-        <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
+          <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
 
-        <button class="nav_toggle" id="navToggle">&#9776;</button>
+          <button class="nav_toggle" id="navToggle">&#9776;</button>
 
-        <nav class="nav_menu" id="navMenu">
-            <ul class="nav_main">
-            <li><a href="alina-fitness.html">Fitness Programs</a></li>
-            <li><a href="karima-membership.html">Membership</a></li>
-            <li><a href="karima-schedule.html">Schedule</a></li>
-            <li><a href="aisha-faq.html">FAQ</a></li>
-            <li><a href="aisha-about.html">About Us</a></li>
-            </ul>
+          <nav class="nav_menu" id="navMenu">
+              <ul class="nav_main">
+              <li><a href="alina-fitness.html">Fitness Programs</a></li>
+              <li><a href="karima-membership.html">Membership</a></li>
+              <li><a href="karima-schedule.html">Schedule</a></li>
+              <li><a href="aisha-faq.html">FAQ</a></li>
+              <li><a href="aisha-about.html">About Us</a></li>
+              </ul>
 
-            <ul class="nav_right">
-            <li><a href="aliya-profile.html">Profile</a></li>
-            <li><a href="aliya-login.html">Login</a></li>
-            </ul>
-        </nav>
+              <ul class="nav_right">
+              <li><a href="aliya-profile.html">Profile</a></li>
+              <li><a href="aliya-login.html">Login</a></li>
+              </ul>
+          </nav>
+
+          <button id="themeToggle" class="theme-button">🌙 Dark Mode</button>
         </div>
   </header>
   
   <main>
-    <header class="app-header">
+    <section class="app-header">
       <h1 id="mainTitle" class="black-text">My membership</h1>
-    </header>
+    </section>
 
     <section class="membership-card-container">
       <div class="membership-card">
         <img src="../images/365.png" alt="12 months membership" class="cornerr-image">
         <div class="card-details">
-  <p id="duration" class="duration">12 months</p>
-  <p id="daysLeftText" class="days-left">364 days left</p>
-</div>
+        <p id="duration" class="duration">12 months</p>
+        <p id="daysLeftText" class="days-left">364 days left</p>
+      </div>
 
         <button id="addDaysButton" class="add-on-button">+30 days</button>
 
@@ -72,11 +74,11 @@
       <h2 id="bonusTitle" class="black-text">Earn bonus days</h2>
       <a href="#" class="action-item">
         <span class="icon"></span> <span class="text" id="giftText">Gift a free trial</span>
-        <span class="arrow">></span>
+        <span class="arrow"></span>
       </a>
       <a href="#" class="action-item">
         <span class="icon"></span> <span class="text" id="promoText">Share promo code</span>
-        <span class="arrow">></span>
+        <span class="arrow"></span>
       </a>
     </section>
 
@@ -84,11 +86,11 @@
       <h2 id="buyTitle" class="black-text">Buy membership and add-ons</h2>
       <a href="#" class="action-item">
         <span class="icon"></span> <span class="text" id="buyText">Buy a membership</span>
-        <span class="arrow">></span>
+        <span class="arrow"></span>
       </a>
       <a href="#" class="action-item">
         <span class="icon"></span> <span class="text" id="activateText">Activate promo code</span>
-        <span class="arrow">></span>
+        <span class="arrow"></span>
       </a>
     </section>
     <section class="choose-membership">
@@ -141,8 +143,11 @@
     </div>
   </footer>
 
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+
   <script src="../scripts/task4.js"></script>
   <script src="../scripts/task6.js"></script>
   <script src="../scripts/theme-toggle.js"></script>
+  <script src="../scripts/nav_buttons.js"></script>
 </body>
 </html>

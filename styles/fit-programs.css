@@ -86,13 +86,8 @@
   .program-card p { font-size: 1rem; }
 }
 
-
+/* _____________________________________ */
 /* DARK THEME STYLES*/
-body.dark-theme {
-  background-color: #0b1724;
-  color: #e0f2fe;
-}
-
 dark-theme .fitness-programs {
   background-color: #121212;
   color: #f1f1f1;
@@ -117,40 +112,4 @@ dark-theme .fitness-programs {
 @media (max-width: 575px) {
   .program-card h2 { font-size: 1.4rem; }
   .program-card p { font-size: 1rem; }
-}
-
-/* THEME TOGGLE BUTTON */
-.theme-button {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-top: 30px
-}
-
-.theme-toggle {
-  background: #00b4d8;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 500;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  z-index: 1100;
-}
-
-.theme-toggle:hover {
-  background: #3ed2f8;
-  transform: translateY(-2px);
-}
-
-body.dark-theme .theme-toggle {
-  background: #222;
-  color: #e6edf3;
-  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
-}
-body.dark-theme .theme-toggle:hover {
-  background: #333;
 }

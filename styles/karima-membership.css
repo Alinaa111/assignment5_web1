@@ -15,7 +15,6 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Mimic mobile font */
     margin: 0;
     padding: 0;
-    /* This is important for the fixed footer/header */
     padding-bottom: 60px; 
 }
 
@@ -26,7 +25,7 @@ a {
 
 h1 {
   font-size: 2.6rem;
-  margin-top: 60px;   /* добавь это */
+  margin-top: 60px; 
   margin-bottom: 10px;
   color: #333;
   position: relative;
@@ -218,35 +217,6 @@ h1 {
     }
 
 
-/* Footer Navigation Bar */
-.footer-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #1c1c1c; /* Darker bar */
-    border-top: 1px solid #333333;
-    padding: 10px 0;
-    height: 50px;
-    z-index: 10;
-}
-
-.footer-nav .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 12px;
-    color: #777777;
-    padding: 5px;
-    /* Use emojis for simple icons */
-}
-
-.footer-nav .nav-item.active {
-    color: #ffffff; /* Active/accent color */
-}
 h1 {
   font-size: 2.6rem;
   margin-bottom: 40px;
@@ -350,7 +320,7 @@ ul li {
   font-size: 1rem;
 }
 
-button {
+main button {
   background: #fff;
   color: #333;
   padding: 10px 20px;
@@ -360,12 +330,12 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-button:hover {
+main button:hover {
   background: #f3f3f3;
   transform: translateY(-2px);
 }
 
-/* Градиенты карточек */
+/* Cards gradient */
 .green {
   background: linear-gradient(135deg,#f7971e, #ffd200);
 }
@@ -403,13 +373,13 @@ button:hover {
 .membership-card-container {
   display: flex;
   justify-content: flex-start;
-  padding: 20px 60px;   /* было 80px — стало 20px */
+  padding: 20px 60px;   
   min-height: 500px;
 }
 
-/* Membership Card — больше и с тенями */
+/* Membership Card */
 .membership-card {
-  max-width: 600px;             /* карточка шире */
+  max-width: 600px;          
   width: 100%;
   border-radius: 20px;
   background: linear-gradient(135deg, #007cf0, #00dfd8);
@@ -469,7 +439,121 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* ---------- UNIVERSAL BLACK TEXT ---------- */
-.black-text {
-  color: #000 !important;
+
+/* _____________________________________________ */
+/*  DARK THEME STYLES */
+/* Headers */
+body.dark-theme .app-header {
+    background: none;
 }
+
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3 {
+  color: #84d1fa;
+}
+
+/* Membership and Cards */
+body.dark-theme .membership-card {
+  background: linear-gradient(135deg, #005f99, #00a3a3);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .card {
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .card button {
+  background: #00b4d8;
+  color: #fff;
+}
+
+body.dark-theme .card button:hover {
+  background: #0096c7;
+}
+
+/* Action List */
+body.dark-theme .action-item {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+
+body.dark-theme .action-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 180, 216, 0.2);
+}
+
+/* Share Notice */
+body.dark-theme .share-notice {
+  background-color: #1a2730;
+  color: #fff;
+}
+
+/* Language container */
+body.dark-theme .language-container {
+  background-color: #1f2933;
+  border-color: #374151;
+  color: #f8f9fa;
+}
+
+body.dark-theme .language-container label,
+body.dark-theme .language-container p {
+  color: #e0e0e0;
+}
+
+body.dark-theme #language {
+  background-color: #121212;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+body.dark-theme #greeting {
+  color: #fff;
+}
+
+/* Buttons */
+body.dark-theme #colorButton {
+  background: #00b4d8;
+  color: #fff;
+}
+
+body.dark-theme #colorButton:hover {
+  background: #0096c7;
+}
+
+/* Footer Navigation */
+body.dark-theme .footer-nav {
+  background-color: #0d0d0d;
+  border-top: 1px solid #222;
+}
+
+body.dark-theme .footer-nav .nav-item {
+  color: #aaa;
+}
+
+body.dark-theme .footer-nav .nav-item.active {
+  color: #00b4d8;
+}
+
+/* Page Content */
+body.dark-theme .page-content {
+  background-color: #121212;
+}
+
+/* Header */
+body.dark-theme .app-header {
+  background-color: #1c1c1c;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-theme .header-icons .status-indicator {
+  background-color: #00b4d8;
+  color: #fff;
+}
+
+/* Highlight for gradients that stay colorful */
+body.dark-theme .blue { background: linear-gradient(135deg, #004e92, #000428); }
+body.dark-theme .pink { background: linear-gradient(135deg, #a83279, #67247d); }
+body.dark-theme .green { background: linear-gradient(135deg, #ff9f1c, #ffbf69); }
