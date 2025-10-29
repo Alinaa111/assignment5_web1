@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registerForm");
   const fields = {
-    username: document.getElementById("username"),
-    email: document.getElementById("email"),
-    password: document.getElementById("password"),
+    username: document.getElementById("regUsername"),
+    email: document.getElementById("regEmail"),
+    password: document.getElementById("regPassword"),
     confirmPassword: document.getElementById("confirmPassword"),
   };
- 
+
   for (const key in fields) {
     const msg = document.createElement("small");
     msg.className = "error-text";
@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     error.textContent = "";
   };
 
-  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateEmail = (email) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const validatePassword = (password) => {
     const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
@@ -44,13 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!validateEmail(fields.email.value)) {
-      showError(fields.email, "Please enter a valid email address.");
+      showError(fields.email, "Invalid email address.");
       valid = false;
     }
 
     if (!validatePassword(fields.password.value)) {
-      showError(
-        fields.password,
+      showError(fields.password,
         "Password must be at least 8 characters, include one uppercase letter, one number, and one special character."
       );
       valid = false;
@@ -61,19 +61,36 @@ document.addEventListener("DOMContentLoaded", () => {
       valid = false;
     }
 
-    if (valid) {
-      form.classList.add("success");
-      form.reset();
+    if (!valid) return;
 
-    
-      setTimeout(() => {
-        window.location.href = "../index.html";
-      }, 500);
+    const existing = JSON.parse(localStorage.getItem("user"));
+    if (existing && existing.email === fields.email.value.trim()) {
+      showError(fields.email, "User with this email already exists.");
+      return;
     }
+
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        username: fields.username.value.trim(),
+        email: fields.email.value.trim(),
+        password: fields.password.value.trim(),
+      })
+    );
+
+    const sound = new Audio("../sounds/notification.mp3");
+    sound.play();
+
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+      window.location.href = "aliya-login.html";
+    }, 1500);
   });
 
-
-  Object.values(fields).forEach((field) => {
-    field.addEventListener("input", () => clearError(field));
-  });
+  Object.values(fields).forEach((field) =>
+    field.addEventListener("input", () => clearError(field))
+  );
 });
