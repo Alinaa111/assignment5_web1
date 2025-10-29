@@ -557,3 +557,218 @@ body.dark-theme .header-icons .status-indicator {
 body.dark-theme .blue { background: linear-gradient(135deg, #004e92, #000428); }
 body.dark-theme .pink { background: linear-gradient(135deg, #a83279, #67247d); }
 body.dark-theme .green { background: linear-gradient(135deg, #ff9f1c, #ffbf69); }
+/* Task 8: Info Icon Expandable Warning with Copy Button */
+
+/* Info icon interactive */
+.info-icon {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.info-icon:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.info-icon.active {
+    transform: rotate(180deg);
+}
+
+/* Warning Section (hidden by default) */
+.warning-section {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    margin-top: 0;
+    background: linear-gradient(135deg, #005f99, #00a3a3);
+    border-radius: 12px;
+    padding: 0 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.warning-section.show {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+    padding: 25px 20px;
+}
+
+/* Warning content */
+.warning-text-content {
+    color: white;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.warning-text-content h4 {
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.warning-text-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.warning-text-content ul li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.warning-text-content ul li::before {
+    content: '✖';
+    position: absolute;
+    left: 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.warning-footer {
+    margin-top: 15px;
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.9;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+}
+
+/* Copy Warning Button */
+.copy-warning-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #ff6b6b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.copy-warning-btn:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.copy-warning-btn:active {
+    transform: translateY(0);
+}
+
+.copy-warning-btn.copied {
+    background-color: #4caf50;
+    color: white;
+}
+
+
+/* Tooltip styling */
+.copy-tooltip {
+    position: fixed;
+    background-color: #333;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 10000;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.copy-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333;
+}
+
+.copy-tooltip.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Dark theme support */
+body.dark-theme .warning-section {
+    background: linear-gradient(135deg, #2a5ac9, #a61e4d);
+}
+
+body.dark-theme .copy-warning-btn {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #c92a2a;
+}
+
+body.dark-theme .copy-warning-btn:hover {
+    background-color: #fff;
+}
+
+body.dark-theme .copy-tooltip {
+    background-color: #00b4d8;
+}
+
+body.dark-theme .copy-tooltip::after {
+    border-top-color: #00b4d8;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .warning-text-content h4 {
+        font-size: 18px;
+    }
+    
+    .warning-text-content ul li {
+        font-size: 14px;
+    }
+    
+    .copy-warning-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+/* === Scroll Progress Bar (under header) === */
+#scrollProgress {
+  position: fixed;
+  top: 73px; /* ← Отодвигаем ниже навбара */
+  left: 0;
+  height: 8px;
+  width: 0%;
+  background: linear-gradient(90deg, #66a6ff, #007cf0, #00dfd8);
+  box-shadow: 0 0 10px rgba(0, 124, 240, 0.6);
+  transition: width 0.25s ease-out;
+  z-index: 9999;
+}
