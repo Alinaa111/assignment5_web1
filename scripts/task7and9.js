@@ -1,14 +1,18 @@
-$(document).ready(function(){
+$(document).ready(function () {
     console.log("jQuery is ready!");
 
-    window.showNotification = function(message) {
-        $("#notification").text(message).addClass("show");
-        setTimeout(function(){
-            $("#notification").removeClass("show");
-        }, 2000);
+    // Notification Toast
+    window.showNotification = function (message) {
+        let toast = $("#toast");
+
+        toast.text(message).css("opacity", "1");
+
+        setTimeout(() => {
+            toast.css("opacity", "0");
+        }, 1800);
     };
 
-    // Lazy Loading
+    // Lazy Loading 
     function lazyLoad() {
         $(".lazy").each(function () {
             let imgTop = $(this).offset().top;

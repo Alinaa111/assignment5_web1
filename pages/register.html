@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script defer src="../scripts/register.js"></script>
-  <script defer src="../scripts/task7and9.js"></script>
   <link rel="stylesheet" href="../styles/shared.css">
   <link rel="stylesheet" href="../styles/register.css">
-  <script defer src="../scripts/task1.js"></script>
 </head>
 <body>
     <header>
@@ -32,6 +29,7 @@
             <li><a href="aliya-login.html">Login</a></li>
             </ul>
         </nav>
+        <button id="themeToggle" class="theme-button">🌙 Dark Mode</button>
         </div>
     </header>
 
@@ -56,13 +54,15 @@
 
       <div class="register-box">
         <h2>Create Account</h2>
-<form id="registerForm">
+<form id="registerForm" novalidate>
   <input type="text" id="regUsername" placeholder="Username" required>
   <input type="email" id="regEmail" placeholder="Email" required>
   <input type="password" id="regPassword" placeholder="Password" required>
   <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
   <button type="submit" class="btn">Register</button>
+  <button type="button" id="resetBtn" class="btn" style="background:#e74c3c; margin-top:10px;">Reset</button>
+
   <div id="error-message"></div>
 </form>
 
@@ -73,7 +73,7 @@
       </div>
     </div>
   </main>
-
+  <div id="notification" class="notification"></div>
   <footer>
     <div>
       <p>(c) Alina Moldabayeva, Karima Shurenova, Aliya Sadvokassova, Aisha Yerbolat</p>
@@ -81,12 +81,15 @@
     </div>
   </footer>
 
-  <script src="../scripts/toggle_button.js"></script>
-  <script src="../scripts/reset_button.js"></script>
-  <script src="../scripts/sound.js"></script>
-  <div id="notification" class="toast">Notification</div>
+  <button id="themeToggle" class="theme-toggle">🌙</button>
 
+<script src="../scripts/task7and9.js"></script>
+<script src="../scripts/theme-toggle.js"></script>
+<script src="../scripts/task1.js"></script>
+<script src="../scripts/reset_button.js"></script>
+<script src="../scripts/nav_buttons.js"></script>
 
-  
+<div id="toast" class="toast">Account created successfully!</div>
+
 </body>
 </html>

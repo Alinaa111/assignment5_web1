@@ -10,7 +10,6 @@
 </head>
 <body>
     <header>
-        <div id="toast">Successfully Logged In ✅</div>
         <div class="nav_links">
         <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
 
@@ -30,6 +29,7 @@
             <li><a href="aliya-login.html">Login</a></li>
             </ul>
         </nav>
+
         <button id="themeToggle" class="theme-button">🌙 Dark Mode</button>
         </div>
     </header>
@@ -56,7 +56,7 @@
 
       <div class="login-box">
         <h2>Login</h2>
-        <form id="loginForm">
+        <form id="loginForm" novalidate>
           <input type="text" id="username" placeholder="Username" required>
           <input type="password" id="password" placeholder="Password" required>
           <button type="submit" class="btn">Sign In</button>
@@ -70,7 +70,7 @@
       </div>
     </div>
   </main>
-
+<div id="notification" class="notification"></div>
   <footer>
     <div>
       <p>(c) Alina Moldabayeva, Karima Shurenova, Aliya Sadvokassova, Aisha Yerbolat</p>
@@ -78,11 +78,14 @@
     </div>
   </footer>
 
-   <button id="themeToggle" class="theme-toggle">🌙</button>
-
-    <script src="../scripts/nav_buttons.js"></script>
-    <script src="../scripts/theme-toggle.js"></script>
-    <script src="../scripts/sound.js"></script>
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+  <script src="../scripts/theme-toggle.js"></script>
+  <script src="../scripts/nav_buttons.js"></script>
+  <script src="../scripts/task7and9.js"></script>
+  <script src="../scripts/sound.js"></script>
+  <script src="../scripts/task1.js"></script>
+  
+  <div id="toast" class="toast">Successfully Logged In!</div>
 </body>
 </html>
 
