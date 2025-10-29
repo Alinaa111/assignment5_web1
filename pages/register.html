@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="../scripts/register.js"></script>
+  <script defer src="../scripts/task7and9.js"></script>
   <link rel="stylesheet" href="../styles/shared.css">
   <link rel="stylesheet" href="../styles/register.css">
   <script defer src="../scripts/task1.js"></script>
@@ -11,26 +14,24 @@
 <body>
     <header>
         <div class="nav_links">
-          <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
+        <a href="../index.html"><img src="../images/logo-2.png" alt="logotype"></a>
 
-          <button class="nav_toggle" id="navToggle">&#9776;</button>
+        <button class="nav_toggle" id="navToggle">&#9776;</button>
 
-          <nav class="nav_menu" id="navMenu">
-              <ul class="nav_main">
-              <li><a href="alina-fitness.html">Fitness Programs</a></li>
-              <li><a href="karima-membership.html">Membership</a></li>
-              <li><a href="karima-schedule.html">Schedule</a></li>
-              <li><a href="aisha-faq.html">FAQ</a></li>
-              <li><a href="aisha-about.html">About Us</a></li>
-              </ul>
+        <nav class="nav_menu" id="navMenu">
+            <ul class="nav_main">
+            <li><a href="alina-fitness.html">Fitness Programs</a></li>
+            <li><a href="karima-membership.html">Membership</a></li>
+            <li><a href="karima-schedule.html">Schedule</a></li>
+            <li><a href="aisha-faq.html">FAQ</a></li>
+            <li><a href="aisha-about.html">About Us</a></li>
+            </ul>
 
-              <ul class="nav_right">
-              <li><a href="aliya-profile.html">Profile</a></li>
-              <li><a href="aliya-login.html">Login</a></li>
-              </ul>
-          </nav>
-
-          <button id="themeToggle" class="theme-button">🌙 Dark Mode</button>
+            <ul class="nav_right">
+            <li><a href="aliya-profile.html">Profile</a></li>
+            <li><a href="aliya-login.html">Login</a></li>
+            </ul>
+        </nav>
         </div>
     </header>
 
@@ -55,21 +56,20 @@
 
       <div class="register-box">
         <h2>Create Account</h2>
-        <form id="registerForm" novalidate>
-          <input type="text" id="username" placeholder="Username" required>
-          <input type="email" id="email" placeholder="Email" required>
-          <input type="password" id="password" placeholder="Password" required>
-          <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-          <button type="submit" class="btn">Register</button>
-          <div id="error-message"></div>
-          <button type="button" id="resetBtn" class="btn" style="background:#e74c3c;">Reset</button>
-          <button id="soundBtn" type="button" class="btn">🔔 Play Sound</button>
+<form id="registerForm">
+  <input type="text" id="regUsername" placeholder="Username" required>
+  <input type="email" id="regEmail" placeholder="Email" required>
+  <input type="password" id="regPassword" placeholder="Password" required>
+  <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
-        </form>
+  <button type="submit" class="btn">Register</button>
+  <div id="error-message"></div>
+</form>
 
-        <p class="extra">
-          Already have an account? <a href="aliya-login.html">Login</a>
-        </p>
+<p class="extra">
+  Already have an account? <a href="aliya-login.html">Login</a>
+</p>
+
       </div>
     </div>
   </main>
@@ -81,12 +81,11 @@
     </div>
   </footer>
 
-  <button id="themeToggle" class="theme-toggle">🌙</button>
-
-  <script src="../scripts/nav_buttons.js"></script>
+  <script src="../scripts/toggle_button.js"></script>
   <script src="../scripts/reset_button.js"></script>
   <script src="../scripts/sound.js"></script>
-  <script src="../scripts/theme-toggle.js"></script>
+  <div id="notification" class="toast">Notification</div>
+
 
   
 </body>

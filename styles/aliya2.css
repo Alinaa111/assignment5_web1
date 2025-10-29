@@ -70,12 +70,16 @@ border-radius: 20px;
 box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
 padding: 25px; text-align: center; } 
 
-.avatar { width: 120px; 
-height: 120px; 
-border-radius: 50%; 
-border: 4px solid #078fd8; 
-object-fit: cover; 
-margin-bottom: 15px; } 
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #078fd8;
+  object-fit: cover;
+  margin-bottom: 15px;
+  max-width: none;
+}
+
 
 .name { font-size: 22px; 
 font-weight: bold; 
@@ -317,3 +321,4 @@ body.dark-theme .btn.logout {
 body.dark-theme .btn.logout:hover {
   background: #b91c1c;
 }
+
