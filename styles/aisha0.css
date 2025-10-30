@@ -979,3 +979,194 @@ main {
 .dark-theme .progress-line.active {
   background: #00b4d8;
 }
+/* ============================================
+   TASK 6: LOADING SPINNER ON SUBMIT BUTTON
+   ============================================ */
+
+/* Submit button loading state */
+.btn-submit {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.btn-submit.loading {
+  background-color: #6c757d !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn-submit.loading .btn-text {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.btn-submit.loading .spinner-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Spinner container */
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Spinner animation */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading text */
+.loading-text {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Button text transition */
+.btn-text {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Success state animation */
+.btn-submit.success {
+  background-color: #28a745 !important;
+  animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Error state animation */
+.btn-submit.error {
+  background-color: #dc3545 !important;
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Ripple effect on click */
+.btn-submit::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-submit:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Disabled button styling */
+.btn-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Progress dots animation (alternative loading indicator) */
+.loading-dots {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 5px;
+}
+
+.loading-dots span {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation: loadingDots 1.4s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loadingDots {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Form message enhancements */
+.success-message {
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideDown 0.4s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .btn-submit {
+    min-width: 120px;
+    padding: 10px 20px;
+  }
+  
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+  
+  .loading-text {
+    font-size: 0.85rem;
+  }
+}
