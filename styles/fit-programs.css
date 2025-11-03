@@ -173,6 +173,9 @@ dark-theme .fitness-programs {
 .dark-theme .program-card.yoga { background: linear-gradient(135deg, #5b1bb1, #2b0073); }
 .dark-theme .program-card.intensive { background: linear-gradient(135deg, #b04560, #4b50a5); }
 .dark-theme .program-card.martial_arts { background: linear-gradient(135deg, #0c7267, #2dbf71); }
+.dark-theme .program-card.dance { background: linear-gradient(135deg, #803a4a, #b35a70); }
+.dark-theme .program-card.team_sports { background: linear-gradient(135deg, #1d3b73, #2985a5); }
+.dark-theme .program-card.diff_activity { background: linear-gradient(135deg, #8a1a00, #b82e7a); }
 
 
 /* Search Bar */

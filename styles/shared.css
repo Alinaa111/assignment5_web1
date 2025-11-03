@@ -226,36 +226,6 @@ body.dark-theme footer {
   border-bottom: 1px solid #1f2a37;
 }
 
-/* THEME TOGGLE BUTTONs */
-/* Button inside navbar */
-.theme-button {
-  background: transparent;
-  border: none;
-  color: #fff;         
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 5px;
-}
-
-.theme-button:hover {
-  text-shadow: 0 0 10px rgba(255, 183, 3, 0.6);
-  transform: scale(1.1);
-}
-
-.theme-button:active {
-  transform: scale(0.95);
-  box-shadow: 0 0 12px rgba(255, 183, 3, 0.3);
-}
-
-body.dark-theme .theme-button {
-  color: #facc15;
-}
-
-body.dark-theme .theme-button:hover {
-  text-shadow: 0 0 10px rgba(250, 204, 21, 0.7);
-}
-
-
 /* 🌗 Floating button */
 .theme-toggle {
   position: fixed;
