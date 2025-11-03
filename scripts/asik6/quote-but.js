@@ -1,25 +1,29 @@
-const quotes = [
-    `"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill`,
-    `"The only way to prove that you're a good sport is to lose." `,
-    `"It's not what you do once in a while; it's what you do day in and day out that makes the difference."`,
-    `"The pain you feel today will show itself as strength tomorrow." - Tunde Oyeneyin`,
-    `"Dreams are free. Goals have a cost. While you can daydream for free, goals don't come without a price. Time, Effort, Sacrifice, and Sweat." - Usain Bolt` ,
-    `"You just can't beat the person who never gives up." - Babe Ruth`,
-    `"The secret of getting ahead is getting started." - Mark Twain`,
-    `"Champions aren't made in the gyms. Champions are made from something they have deep inside them -- a desire, a dream, a vision." - Muhammad Ali`,
-    `"If you don’t find the time, if you don’t do the work, you don’t get the results." - Arnold Schwarzenegger`,
-    `'The real workout starts when you want to stop." – Ronnie Coleman`
-]
-
-const quoteButton = document.querySelector(".quote-but")
+const quoteButton = document.querySelector(".quote-but");
 const quoteDisplay = document.querySelector("#quote");
 
-quoteButton.addEventListener("click", () => {
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+quoteButton.addEventListener("click", async () => {
     quoteDisplay.style.opacity = 0;
-    setTimeout(() => {
-        quoteDisplay.textContent = randomQuote;
-        quoteDisplay.style.opacity = 1;
-    }, 300);
 
+    setTimeout(() => {
+        quoteDisplay.textContent = "Loading...";
+        quoteDisplay.style.opacity = 0.5;
+    }, 200);
+
+    try {
+        const response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent("https://zenquotes.io/api/random?nocache=" + Math.random())}`);
+        const data = await response.json();
+
+        const quote = data[0].q;
+        const author = data[0].a;
+
+        setTimeout(() => {
+            quoteDisplay.textContent = `"${quote}" — ${author}`;
+            quoteDisplay.style.opacity = 1;
+        }, 800);
+
+    } catch (error) {
+        quoteDisplay.textContent = "Failed to fetch quote. Please try again.";
+        quoteDisplay.style.opacity = 1;
+        console.error("API error:", error);
+    }
 });
