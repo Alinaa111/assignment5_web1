@@ -444,7 +444,7 @@ main button:hover {
 /*  DARK THEME STYLES */
 /* Headers */
 body.dark-theme .app-header {
-    background: none;
+  background-color: transparent !important;
 }
 
 body.dark-theme h1, 
@@ -763,12 +763,18 @@ body.dark-theme .copy-tooltip::after {
 /* === Scroll Progress Bar (under header) === */
 #scrollProgress {
   position: fixed;
-  top: 73px; /* ← Отодвигаем ниже навбара */
+  top: 73px;
   left: 0;
   height: 8px;
   width: 0%;
-  background: linear-gradient(90deg, #66a6ff, #007cf0, #00dfd8);
-  box-shadow: 0 0 10px rgba(0, 124, 240, 0.6);
+  background: linear-gradient(90deg, #003366, #004c99, #0066cc);
+  box-shadow: 0 0 12px rgba(0, 51, 102, 0.6);
   transition: width 0.25s ease-out;
   z-index: 9999;
+}
+
+
+.dark-theme #scrollProgress {
+  background: linear-gradient(90deg, #66a6ff, #007cf0, #00dfd8);
+  box-shadow: 0 0 10px rgba(0, 124, 240, 0.6);
 }
