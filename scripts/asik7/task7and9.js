@@ -14,17 +14,27 @@ $(document).ready(function () {
 
     // Lazy Loading 
     function lazyLoad() {
-        $(".lazy").each(function () {
-            let imgTop = $(this).offset().top;
-            let scrollBottom = $(window).scrollTop() + $(window).height();
+    $(".lazy").each(function () {
+      const imgTop = $(this).offset().top;
+      const scrollBottom = $(window).scrollTop() + $(window).height();
 
-            if (scrollBottom > imgTop) {
-                $(this).attr("src", $(this).data("src"));
-                $(this).removeClass("lazy");
-            }
-        });
-    }
+      if (scrollBottom + 100 > imgTop) {
+        const dataSrc = $(this).data("src");
 
-    lazyLoad();
-    $(window).on("scroll", lazyLoad);
+        if (dataSrc) {
+          $(this)
+            .attr("src", dataSrc)
+            .hide()
+            .fadeIn(400) 
+            .removeClass("lazy");
+
+          console.log("✅ Lazy image loaded:", dataSrc);
+        }
+      }
+    });
+  }
+
+  lazyLoad();
+
+  $(window).on("scroll", lazyLoad);
 });

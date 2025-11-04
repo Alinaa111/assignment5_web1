@@ -52,12 +52,12 @@
       <div class="profile-container">
 
         <div class="profile-card">
-          <img data-src="../images/photo.jpg" class="avatar lazy">
-          <h2 class="name">Aliya</h2>
+          <img data-src="../images/profile-photo.webp" class="avatar lazy" alt="Profile photo">
+          <h2 class="name" id="profileName">Aliya</h2>
           <p class="status">Active Member • Premium Plan</p>
 
           <div class="profile-info">
-            <p><strong>Email:</strong> alnesssa@mail.com</p>
+            <p><strong>Email:</strong> <span id="profileEmail">alnesssa@mail.com</span></p>
             <p><strong>Location:</strong> Astana, Kazakhstan</p>
             <p><strong>Member since:</strong> Sep 2025</p>
           </div>
@@ -103,9 +103,8 @@
         </div>
 
         <div class="actions">
-          <a href="#" class="btn edit">Edit Profile</a>
-          <a href="#" class="btn logout">Logout</a>
-        </div>
+        <button class="logout">Logout</button>
+      </div>
       </div>
     </main>
 
@@ -116,6 +115,40 @@
         <p>SE-2405, BirQadam</p>
       </div>
     </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      const nameEl = document.getElementById("profileName");
+      const emailEl = document.getElementById("profileEmail");
+
+      if (user && user.loggedIn) {
+        if (nameEl) nameEl.textContent = user.username || "User";
+        if (emailEl) emailEl.textContent = user.email || "—";
+      } else {
+        
+        window.location.href = "aliya-profile-guest.html";
+        return;
+      }
+
+      const logoutBtn = document.querySelector(".actions .logout");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          localStorage.removeItem("loggedIn");
+
+          const savedUser = JSON.parse(localStorage.getItem("user"));
+          if (savedUser) {
+            delete savedUser.loggedIn;
+            localStorage.setItem("user", JSON.stringify(savedUser));
+          }
+
+          window.location.href = "aliya-profile-guest.html";
+        });
+      }
+    });
+    </script>
+
 
     <button id="themeToggle" class="theme-toggle">🌙</button>
 
@@ -123,7 +156,7 @@
     <script src="../scripts/asik6/theme-toggle.js"></script>
     <script src="../scripts/asik7/task7and9.js"></script>
     <script src="../scripts/asik6/keyboard_n_multi.js"></script>
-    
+    <script src="../scripts/asik7/auth.js"></script>
     
 </body>
 </html>
