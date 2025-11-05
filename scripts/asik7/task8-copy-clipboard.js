@@ -19,10 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
                 <p class="warning-footer">Sharing membership credentials is a violation of our Terms of Service.</p>
             </div>
-            <button class="copy-warning-btn">
-                <span class="copy-icon">📋</span>
-                <span class="copy-text">Copy Warning</span>
-            </button>
         `;
         
         // Insert warning section after share-notice

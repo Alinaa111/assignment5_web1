@@ -28,6 +28,7 @@
               </ul>
 
               <ul class="nav_right">
+                
               <li><a href="aliya-profile.html">Profile</a></li>
               <li><a href="aliya-login.html">Login</a></li>
               </ul>
@@ -39,103 +40,85 @@
     <section class="app-header">
       <h1 id="mainTitle" class="black-text">My membership</h1>
     </section>
-
     <section class="membership-card-container">
-      <div class="membership-card">
-        <img src="../images/365.png" alt="12 months membership" class="cornerr-image">
-        <div class="card-details">
-        <p id="duration" class="duration">12 months</p>
-        <p id="daysLeftText" class="days-left">364 days left</p>
+  <!-- Главная карточка -->
+  <div class="membership-card" id="mainCard">
+    <img src="../images/365.png" alt="12 months membership" class="corner-image1">
+    <div class="card-details">
+      <p class="membership-type">Personal membership</p>
+      <p class="duration">for 365 days</p>
+      <div class="progress">
+        <div class="progress-bar"></div>
       </div>
+      <p class="days-left">143 days left <span class="until">until March 29, 2026</span></p>
+      <p class="reset-text">Your visit limit will reset on November 24 at 00:00.</p>
+    </div>
+    <button class="next-button" id="nextButton">→</button>
+  </div>
 
-        <button id="addDaysButton" class="add-on-button">+30 days</button>
+  <!-- Внутренняя страница -->
+  <div class="membership-card inner hidden" id="detailsCard">
+    <button id="backButton" class="back-button">←</button>
+    <h3>Bonus days</h3>
+    <div class="info-box">
+      <p class="bonus">30 days</p>
+      <p class="desc">Will activate after the main membership</p>
+    </div>
 
-        <button class="next-button">→</button>
+    <div class="info-grid">
+      <div class="info-item">
+        <h4>Attendance</h4>
+        <p class="highlight">89 / 100</p>
+        <p>Perfect</p>
       </div>
-    </section>
+      <div class="info-item">
+        <h4>Freezing</h4>
+        <p class="highlight">60</p>
+        <p>days left</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="share-notice">
+  
+    <section class="action-list">
+      <div class="share-notice">
       <span id="shareText" class="black-text">Don't share your membership</span>
       <span class="info-icon">ⓘ</span>
     </div>
-    <!-- 🔸 Language Container -->
-    <div class="language-container">
-      <label for="language" id="chooseLangLabel">Change Language:</label>
-      <select id="language">
-        <option value="english">English</option>
-        <option value="russian">Russian</option>
-        <option value="kazakh">Kazakh</option>
-      </select>
+  <h2 id="bonusTitle" class="black-text">Earn bonus days</h2>
 
-      <p id="greeting">Welcome to Membership Page!</p>
+  <a href="#" class="action-item">
+    <span class="icon"></span>
+    <span class="text" id="giftText">Gift a free trial</span>
+    <span class="arrow">➔</span>
+    <div id="giftBox" class="gift-box" style="display: none;"></div>
 
-      <button id="colorButton">Change Background Color</button>
-    </div>
+  </a>
 
-    <section class="action-list">
-      <h2 id="bonusTitle" class="black-text">Earn bonus days</h2>
-      <a href="#" class="action-item">
-        <span class="icon"></span> <span class="text" id="giftText">Gift a free trial</span>
-        <span class="arrow"></span>
-      </a>
-      <a href="#" class="action-item">
-        <span class="icon"></span> <span class="text" id="promoText">Share promo code</span>
-        <span class="arrow"></span>
-      </a>
+  <a href="#" class="action-item" id="promoItem">
+    <span class="icon"></span>
+    <span class="text" id="promoText">Share promo code</span>
+    <span class="arrow" id="promoArrow">➔</span>
+  </a>
+   <div id="promoBox" class="promo-box" style="display: none;"></div>
+      
+</section>
+
     </section>
 
     <section class="action-list">
       <h2 id="buyTitle" class="black-text">Buy membership and add-ons</h2>
       <a href="#" class="action-item">
         <span class="icon"></span> <span class="text" id="buyText">Buy a membership</span>
-        <span class="arrow"></span>
+        <span class="arrow" id="buyArrow">➔</span>
       </a>
       <a href="#" class="action-item">
         <span class="icon"></span> <span class="text" id="activateText">Activate promo code</span>
-        <span class="arrow"></span>
+        <span class="arrow" id="promoArrow">➔</span>
       </a>
+     
     </section>
-    <section class="choose-membership">
-    <h1>Choose your membership</h1>
-    <p class="subtitle">There are free guests for friends in each membership</p>
-
-    <div class="membership-container">
-      <div class="card green">
-        <img src="../images/90.png" alt="3 months membership" class="corner-imagee">
-        <h2>3 month</h2>
-        <p class="price">48 330 ₸</p>
-        <p class="per month">per month</p>
-        <ul>
-          <li>144+ studios</li>
-          <li>5 guests</li>
-        </ul>
-        <button>Purchase</button>
-      </div>
-
-      <div class="card pink">
-        <img src="../images/180.png" alt="6 months membership" class="corner-imagee">
-        <h2>6 month</h2>
-        <p class="price">32 498 ₸</p>
-        <p class="per month">per month</p>
-        <ul>
-          <li>144+ studios</li>
-          <li>8 guests</li>
-        </ul>
-        <button>Purchase</button>
-      </div>
-
-      <div class="card blue">
-        <img src="../images/365.png" alt="12 months membership" class="corner-image">
-        <h2>12 month</h2>
-        <p class="price">22 499 ₸</p>
-        <p class="per">per month</p>
-        <ul>
-          <li>144+ studios</li>
-          <li>12 guests</li>
-        </ul>
-        <button>Purchase</button>
-      </div>
-    </div>
   </main>
 
   <footer>
@@ -154,6 +137,28 @@
   <script src="../scripts/asik7/task8-copy-clipboard.js"></script>
   <script src="../scripts/asik7/progress.js"></script>
   <script src="../scripts/asik6/keyboard_n_multi.js"></script>
-  <script src="../scripts/asik7/auth.js"></script>
+  <script src="../scripts/asik7/details.js"></script>
+  <script src="../scripts/asik7/action.js"></script>
+   <script src="../scripts/buymem.js"></script>
+    <script src="../scripts/promo.js"></script>
+  <script>
+   const nextButton = document.getElementById("nextButton");
+const backButton = document.getElementById("backButton");
+const mainCard = document.getElementById("mainCard");
+const detailsCard = document.getElementById("detailsCard");
+
+nextButton.addEventListener("click", () => {
+  mainCard.classList.add("hidden");
+  detailsCard.classList.remove("hidden");
+});
+
+backButton.addEventListener("click", () => {
+  detailsCard.classList.add("hidden");
+  mainCard.classList.remove("hidden");
+});
+
+  </script>
+
 </body>
 </html>
+      
