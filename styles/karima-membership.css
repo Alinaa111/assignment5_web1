@@ -1015,34 +1015,33 @@ body {
 .membership-card-container {
   width: 90%;
   max-width: 420px;
-  margin: 40px auto;
+  margin: 40px auto 80px auto;
   position: relative;
   perspective: 1000px;
 }
 
-.membership-container,
-.inner-page {
-  width: 350px;  /* одинаковая ширина */
-  min-height: 520px; /* одинаковая высота */
+.membership-card {
   background: linear-gradient(135deg, #007cf0, #00dfd8);
+  color: white;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  color: #fff;
-  position: relative;
-  transition: all 0.4s ease;
+  padding: 25px;
+  min-height: 420px;
+  transition: all 0.5s ease;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  backface-visibility: hidden;
 }
-
 
 .hidden {
   display: none;
 }
 
-.corner-image {
+.corner-image1 {
   width: 200px;          /* увеличен размер */
   position: absolute;
   top: 10px;             /* чуть ближе к верху */
-  right: 10px;           /* чуть ближе к правому краю */
+  left: 10px;           /* чуть ближе к правому краю */
   opacity: 0.95;         /* немного прозрачности для гармонии */
 }
 
@@ -1096,7 +1095,10 @@ body {
 }
 
 /* Вторая карточка (детали) */
-
+.inner {
+  background: linear-gradient(135deg, #007cf0, #00dfd8);
+  color: white;
+}
 
 .back-button {
   background: none;
