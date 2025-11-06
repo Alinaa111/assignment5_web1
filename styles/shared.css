@@ -276,3 +276,11 @@ body.dark-theme .theme-toggle:hover {
   box-shadow: 0 0 10px rgba(0, 124, 240, 0.6);
 }
 
+.nav_right {
+  visibility: hidden;
+}
+.nav_ready .nav_right {
+  visibility: visible;
+  transition: visibility 0s, opacity 0.2s ease-in;
+  opacity: 1;
+}
