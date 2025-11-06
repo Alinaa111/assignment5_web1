@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("user"));
-
   const inPages = window.location.pathname.includes("/pages/");
   const base = inPages ? "" : "pages/";
 
@@ -59,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Logout
     const logoutTop = document.getElementById("logoutTop");
     if (logoutTop) {
       logoutTop.addEventListener("click", e => {
@@ -70,10 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
           delete u.loggedIn;
           localStorage.setItem("user", JSON.stringify(u));
         }
-       
         window.location.href = `${base}aliya-profile-guest.html`;
       });
     }
+
+    document.body.classList.add("nav_ready");
   }
 
   const isLogged = !!(user && user.loggedIn);
