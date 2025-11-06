@@ -1188,3 +1188,71 @@ main {
   background: linear-gradient(90deg, #66a6ff, #007cf0, #00dfd8);
   box-shadow: 0 0 10px rgba(0, 124, 240, 0.6);
 }
+/* ================================================
+   FIX FOR DARK MODE - Multi-Step Form Text Visibility
+   ================================================ */
+
+/* Main form heading - ensure it's visible in dark mode */
+body.dark-theme .form-wrapper h2,
+body.dark-theme .form-wrapper h1 {
+    color: #ffffff !important;
+}
+
+/* Step headings inside form */
+body.dark-theme .form-step h2,
+body.dark-theme .form-step h3 {
+    color: #00b4d8 !important;
+}
+
+/* Form labels - make them visible in dark mode */
+body.dark-theme .form-wrapper label,
+body.dark-theme .form-step label {
+    color: #e0e0e0 !important;
+}
+
+/* Review step - fix the white box with invisible text */
+body.dark-theme .review-section,
+body.dark-theme .review-box,
+body.dark-theme [class*="review"] {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+}
+
+/* Review step text labels and content */
+body.dark-theme .review-section p,
+body.dark-theme .review-section strong,
+body.dark-theme .review-box p,
+body.dark-theme .review-box strong {
+    color: #ffffff !important;
+}
+
+/* Ensure all paragraph text in form is visible */
+body.dark-theme .form-wrapper p,
+body.dark-theme .form-step p {
+    color: #cccccc !important;
+}
+
+/* ================================================
+   FIX FOR LIGHT MODE - Review Step Text Visibility
+   ================================================ */
+
+/* Review step box - ensure dark text on light background */
+body:not(.dark-theme) .review-section,
+body:not(.dark-theme) .review-box,
+body:not(.dark-theme) [class*="review"] {
+    background-color: #ffffff !important;
+    color: #161618 !important;
+}
+
+/* Review step paragraphs and labels */
+body:not(.dark-theme) .review-section p,
+body:not(.dark-theme) .review-section strong,
+body:not(.dark-theme) .review-box p,
+body:not(.dark-theme) .review-box strong {
+    color: #161618 !important;
+}
+
+/* Message displayed in review section */
+body:not(.dark-theme) .review-section .message-preview {
+    color: #46464A !important;
+}
