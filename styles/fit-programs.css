@@ -1,3 +1,13 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  min-height: 100vh;
+}
+
 /* Cards of Fitness programs */
 .fitness-programs {
   padding: 0 20px;
@@ -24,6 +34,13 @@
   border-radius: 2px;
 }
 
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+
 .programs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -42,27 +59,87 @@
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.program-card.water { background: linear-gradient(135deg, #007cf0, #00dfd8); }
-.program-card.gym { background: linear-gradient(135deg, #ff512f, #dd2476); }
-.program-card.stretching { background: linear-gradient(135deg, #f7971e, #ffd200); }
-.program-card.yoga { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
-.program-card.intensive { background: linear-gradient(135deg, #fc5c7d, #6a82fb); }
-.program-card.martial_arts { background: linear-gradient(135deg, #11998e, #38ef7d); }
-.program-card.dance { background: linear-gradient(135deg, #ff9a9e, #fad0c4);}
-.program-card.team_sports { background: linear-gradient(135deg, #36d1dc, #5b86e5);}
-.program-card.diff_activity { background: linear-gradient(135deg, #ff6a00, #ee0979);}
+.program-card.water {
+  background-image: url("../images/bg-water.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.program-card.gym {
+  background-image: url("../images/bg-gym.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.program-card.stretching {
+  background-image: url("../images/bg-stretching.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.program-card.yoga {
+  background-image: url("../images/bg-yoga.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.program-card.intensive {
+  background-image: url("../images/bg-intensive.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.program-card.martial_arts {
+  background-image: url("../images/bg-martial.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.program-card.dance {
+  background-image: url("../images/bg-dance.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.program-card.team_sports {
+  background-image: url("../images/bg-team.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.program-card.diff_activity {
+  background-image: url("../images/bg-diff_act.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
 
 .program-card h2 {
   font-size: 1.6rem;
-  margin: 0 0 12px;
+  margin: 0 0 6px;
   position: relative;
   z-index: 2;
 }
 .program-card p {
   font-size: 1.1rem;
-  margin: 0 0 40px;
+  margin: 0 0 20px;
   z-index: 2;
   position: relative;
+}
+
+.program-card h2,
+.program-card p {
+  transform: translateY(-30px);
 }
 
 .program-card::before {
@@ -82,6 +159,13 @@
 .program-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+.program-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); 
+  z-index: 1;
 }
 
 
@@ -147,10 +231,41 @@ mark {
   border-radius: 3px;
 }
 
-@media (max-width: 575px) {
-  .program-card h2 { font-size: 1.4rem; }
-  .program-card p { font-size: 1rem; }
+/* Media Queries */
+/* Mobile */
+@media (max-width: 600px) {
+  .fitness-programs {
+    padding: 0 10px;
+    max-width: 100%;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 0 auto;
+  }
+
+  .program-card {
+    padding: 40px 25px;
+  }
 }
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .fitness-programs {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+  }
+
+  .program-card {
+    padding: 50px 30px;
+  }
+}
+
 
 /* _____________________________________ */
 /* DARK THEME STYLES*/
@@ -163,19 +278,16 @@ dark-theme .fitness-programs {
 .dark-theme .fitness-programs h1 {
   color: #f5f5f5;
 }
+.dark-theme .subtitle {
+  color: #dbdbdb;
+}
 
 .dark-theme .program-card {
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
-.dark-theme .program-card.water { background: linear-gradient(135deg, #005b99, #00a0a0); }
-.dark-theme .program-card.gym { background: linear-gradient(135deg, #b42e2e, #831a57); }
-.dark-theme .program-card.stretching { background: linear-gradient(135deg, #c47c00, #e0b000); }
-.dark-theme .program-card.yoga { background: linear-gradient(135deg, #5b1bb1, #2b0073); }
-.dark-theme .program-card.intensive { background: linear-gradient(135deg, #b04560, #4b50a5); }
-.dark-theme .program-card.martial_arts { background: linear-gradient(135deg, #0c7267, #2dbf71); }
-.dark-theme .program-card.dance { background: linear-gradient(135deg, #803a4a, #b35a70); }
-.dark-theme .program-card.team_sports { background: linear-gradient(135deg, #1d3b73, #2985a5); }
-.dark-theme .program-card.diff_activity { background: linear-gradient(135deg, #8a1a00, #b82e7a); }
+.dark-theme .program-card::after {
+  background: rgba(255, 255, 255, 0.05); 
+}
 
 
 /* Search Bar */
@@ -213,7 +325,7 @@ dark-theme .fitness-programs {
   background-color: #333;
   color: #fff;
 }
-/* === Scroll Progress Bar (under header) === */
+/*  Scroll Progress Bar */
 #scrollProgress {
   position: fixed;
   top: 73px;
