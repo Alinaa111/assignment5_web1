@@ -1,3 +1,8 @@
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body { 
   font-family: Arial, sans-serif;
   background: #ffffff;
@@ -23,11 +28,9 @@ a {
     color: inherit;
 }
 
-/* Общие настройки страницы */
 
-/* Заголовок */
 h1 {
-  font-size: 3.5rem; /* увеличен размер */
+  font-size: 3.5rem;
   margin-top: 40px;
   margin-bottom: 30px;
   color: #fff;
@@ -44,7 +47,7 @@ h1 {
   padding: 20px 0;
 }
 
-/* Карточка */
+/* Card */
 .membership-card {
   background: linear-gradient(135deg, #007cf0, #00dfd8);
   border-radius: 15px;
@@ -61,7 +64,7 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Кнопки */
+/* Buttons */
 .add-on-button,
 .next-button {
   position: absolute;
@@ -91,7 +94,6 @@ h1 {
   align-items: center;
 }
 
-/* Текст внутри карточки */
 .card-details {
   z-index: 2;
   padding-bottom: 10px;
@@ -132,7 +134,7 @@ h1 {
     color: #ebebeb; /* Grey-ish color for the info icon */
 }
 
-    /* Action Lists (Списки) */
+    /* Action Lists */
     .action-list {
         margin-top: 40px;
     }
@@ -141,17 +143,16 @@ h1 {
         color: #333; 
         font-weight: 600;
         font-size: 20px;
-        margin-bottom: 10px; /* Увеличиваем отступ после заголовка */
+        margin-bottom: 10px;
         padding: 0;
     }
     
     .action-item {
-        /* Делаем каждый элемент отдельной карточкой */
-        background-color:#66a6ff; /* Белый фон */
-        border: 1px solid#66a6ff; /* Тонкая серая обводка (рамка) */
-        border-radius: 8px; /* Скругленные углы */
-        margin-bottom: 10px; /* Отступ между карточками */
-        padding: 15px 15px; /* Увеличиваем внутренний отступ */
+        background-color:#66a6ff; 
+        border: 1px solid#66a6ff; 
+        border-radius: 8px; 
+        margin-bottom: 10px; 
+        padding: 15px 15px; 
         
         display: flex;
         align-items: center;
@@ -159,7 +160,6 @@ h1 {
         border-bottom: none; 
         color: #ffffff; 
         
-        /* Добавляем тень, чтобы карточки выделялись */
         box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
         transition: box-shadow 0.2s;
     }
@@ -169,11 +169,10 @@ h1 {
     }
 
     .action-item:last-child {
-        border-bottom: none; /* Это остается, но теперь оно лишнее, т.к. border-bottom: none; выше */
+        border-bottom: none; 
     }
 
       .action-item .icon {
-        /* Если вы используете иконку, ей нужен отступ */
         margin-right: 15px;
     }
     
@@ -191,7 +190,6 @@ h1 {
         width: auto;
     }
     
-    /* Убедимся, что линии-разделители между секциями не конфликтуют */
     .section-separator {
         border: none;
         border-top: 1px solid #ddd;
@@ -224,15 +222,15 @@ h1::after {
 
 .membership-container {
   display: flex;
-  justify-content: center;   /* center by gorizontalr */
-  gap: 30px;                 /* spacing between cards */
-  flex-wrap: wrap;           /* so that it can be carried over to small screens */
+  justify-content: center;   
+  gap: 30px;                
+  flex-wrap: wrap;          
   max-width: 1100px;
   margin: 0 auto;
 }
 .card {
-  flex: 1 1 280px;   /* card's width and adaptibility */
-  min-height: 350px; /*same height */
+  flex: 1 1 280px;   
+  min-height: 350px; 
 }
 
 
@@ -330,27 +328,27 @@ main button:hover {
 }
 .corner-image {
   position: absolute;
-  top: 15px;       /* distance from the top */
-  left: 15px;      /* distance from the left */
-  width: 100px;    /* resize image */
-  height: auto;    /* keep proportions */
-  z-index: 2;      /* make sure image is above gradient */
+  top: 15px;       
+  left: 15px;      
+  width: 100px;    
+  height: auto;    
+  z-index: 2;     
 }
 .cornerr-image {
   position: absolute;
-  top: 0;       /* distance from the top */
-  left: 0;      /* distance from the left */
-  width: 200px;    /* resize image */
-  height: auto;    /* keep proportions */
-  z-index: 2;      /* make sure image is above gradient */
+  top: 0;      
+  left: 0;     
+  width: 200px;   
+  height: auto;    
+  z-index: 2;     
 }
 .corner-imagee {
   position: absolute;
-  top: 25px;       /* distance from the top */
-  left: 15px;      /* distance from the left */
-  width: 70px;     /* smaller resize */
-  height: auto;    /* keep proportions */
-  z-index: 2;      /* make sure image is above gradient */
+  top: 25px;       
+  left: 15px;     
+  width: 70px;    
+  height: auto;    
+  z-index: 2;     
 }
 
 .membership-card-container {
