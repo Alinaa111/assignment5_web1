@@ -343,3 +343,21 @@ body.dark-theme .btn.logout:hover {
   background: linear-gradient(90deg, #66a6ff, #007cf0, #00dfd8);
   box-shadow: 0 0 10px rgba(0, 124, 240, 0.6);
 }
+/* === Responsive Design === */
+@media (max-width: 900px) {
+  aside {
+    display: none; 
+  }
+
+  body {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr; 
+  }
+
+  main {
+    padding: 20px;
+  }
+}
