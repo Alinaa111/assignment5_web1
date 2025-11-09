@@ -136,4 +136,29 @@ $(document).ready(function () {
         const keyword = $(this).val().trim();
         highlight(keyword);
     })
+
+
+    // Empty state
+    const $programsGrid = $(".programs-grid");
+    const $emptyState = $("<p>", {
+    class: "empty-state",
+    text: "No fitness programs found 😔"
+    }).hide();
+
+    $programsGrid.after($emptyState);
+
+    $("#search").on("input", function() {
+    const query = $(this).val().toLowerCase();
+    let anyVisible = false;
+
+    $(".program-card").each(function() {
+        const text = $(this).text().toLowerCase();
+        const match = text.includes(query);
+        $(this).toggle(match);
+        if (match) anyVisible = true;
+    });
+
+    $emptyState.toggle(!anyVisible);
+    });
+
 })
