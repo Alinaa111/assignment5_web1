@@ -4,7 +4,8 @@ html, body {
 }
 
 body {
-  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8 0%, #dce7f2 100%);
   min-height: 100vh;
 }
 
@@ -168,6 +169,17 @@ body {
   z-index: 1;
 }
 
+/* Stats */
+.stats {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+.stats span {
+  color: #ff6f61;
+  font-weight: 600;
+}
 
 
 /* Searching bar */
@@ -193,6 +205,15 @@ body {
   border-color: #007cf0;
   box-shadow: 0 0 5px rgba(0, 124, 240, 0.3);
 }
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-top: 30px;
+}
+
 
 /* Suggestions */
 .autocomplete-list {
@@ -231,6 +252,99 @@ mark {
   border-radius: 3px;
 }
 
+
+/* Popup description */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8); 
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #ff6f61, #ffb347, #ff6ff1, #6a82fb);
+  background-size: 400% 400%;
+  color: #fff;
+  padding: 25px 20px 30px 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  animation: scaleIn 0.3s ease;
+  max-height: 80vh; 
+  overflow: hidden;
+  animation: gradientBG 8s ease infinite, scaleIn 0.4s ease;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+  transition: all 0.2s ease;
+}
+.close:hover {
+  color: #000000;
+  transform: rotate(90deg);
+}
+
+#modalRooms {
+  margin-top: 15px;
+  padding-left: 20px;
+  max-height: 55vh; 
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #fff #333;
+}
+#modalRooms::-webkit-scrollbar {
+  width: 6px;
+}
+#modalRooms::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.5); 
+  border-radius: 3px;
+}
+#modalRooms::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 3px;
+}
+#modalRooms::-webkit-scrollbar-thumb:hover {
+  background-color: #ff6f61; 
+}
+#modalRooms li {
+  margin-bottom: 12px;
+  line-height: 1.4;
+  padding: 5px 10px;
+}
+
+
+
 /* Media Queries */
 /* Mobile */
 @media (max-width: 600px) {
@@ -248,6 +362,12 @@ mark {
   .program-card {
     padding: 40px 25px;
   }
+
+  .modal-content {
+    width: 85%;
+    max-width: none;
+    padding: 20px 15px;
+  }
 }
 /* Tablet */
 @media (min-width: 601px) and (max-width: 1024px) {
@@ -257,12 +377,30 @@ mark {
   }
 
   .programs-grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
 
   .program-card {
     padding: 50px 30px;
+  }
+}
+
+/* Small desktop and higher */
+@media (min-width: 1025px) {
+  .fitness-programs {
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+  }
+
+  .program-card {
+    padding: 60px 40px;
   }
 }
 
@@ -299,7 +437,7 @@ dark-theme .fitness-programs {
 }
 
 .dark-theme .search-bar::placeholder {
-  color: #aaa;
+  color: #c7c7c7;
 }
 
 .dark-theme .search-bar:focus {
@@ -325,6 +463,17 @@ dark-theme .fitness-programs {
   background-color: #333;
   color: #fff;
 }
+
+/* Stats */
+.dark-theme .stats {
+  color: #dbdbdb;
+}
+
+/* Popup description */
+.dark-theme .modal-content{
+  color: #000000;
+}
+
 /*  Scroll Progress Bar */
 #scrollProgress {
   position: fixed;
@@ -335,7 +484,7 @@ dark-theme .fitness-programs {
   background: linear-gradient(90deg, #003366, #004c99, #0066cc);
   box-shadow: 0 0 12px rgba(0, 51, 102, 0.6);
   transition: width 0.25s ease-out;
-  z-index: 9999;
+  z-index: 2000;
 }
 
 
