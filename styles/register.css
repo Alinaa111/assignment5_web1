@@ -405,7 +405,7 @@ body.dark-theme .image {
       "main"
       "footer";
     grid-template-columns: 1fr; 
-    overflow-x: hidden; /* 🔥 Убирает горизонтальный скролл */
+    overflow-x: hidden;
   }
 
   main {
@@ -429,7 +429,7 @@ body.dark-theme .image {
     height: auto;
   }
 
-  .login-box {
+  .register-box {
     width: 90%;
     max-width: 400px;
     margin: 0 auto;

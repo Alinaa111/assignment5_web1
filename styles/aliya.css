@@ -288,7 +288,7 @@ body.dark-theme .extra a:hover {
       "main"
       "footer";
     grid-template-columns: 1fr; 
-    overflow-x: hidden; /* 🔥 Убирает горизонтальный скролл */
+    overflow-x: hidden;
   }
 
   main {
