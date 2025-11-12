@@ -70,7 +70,6 @@ html, body {
   background: linear-gradient(135deg, #0077b6, #00b4d8);
   color: #fff;
   margin: 80px 0 30px;
-  width: 100%;
 }
 
 .hero h1 {
@@ -99,7 +98,7 @@ html, body {
   background: #ffd166;
 }
 
-/* QUOTES */
+/* ADVICES */
 .motivation-sect {
   background: #e8f4fb;
   border-radius: 12px;
@@ -109,7 +108,7 @@ html, body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.quote-text {
+.advice-text {
   font-size: 1.2rem;
   color: #023047;
   margin: 20px 0;
@@ -118,7 +117,7 @@ html, body {
   font-style: italic;
 }
 
-.quote-but {
+.advice-but {
   background-color: #0077b6;
   color: #fff;
   border: none;
@@ -128,7 +127,7 @@ html, body {
   cursor: pointer;
   transition: background-color 0.3 ease;
 }
-.quote-but:hover {
+.advice-but:hover {
   background-color: #005f87;
 }
 
@@ -240,6 +239,23 @@ html, body {
   font-size: 1.1em;
 }
 
+.stats-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 30px;
+  background: #ffb703;
+  color: #023047;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.stats-btn:hover {
+  background: #ffd166;
+  transform: translateY(-3px);
+}
+
 /*  CONTACT  */
 .contact {
   background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
@@ -247,7 +263,7 @@ html, body {
   text-align: center;
   color: #023047;
   border-top: 3px solid #00b4d8;
-  border-bottom: 3px solid #00b4d8;;
+  border-bottom: 3px solid #00b4d8;
 }
 
 .contact h2 {
@@ -308,24 +324,152 @@ html, body {
 }
 
 /*  MEDIA QUERIES  */
-@media (max-width: 992px) {
+/* Mobile */
+@media (max-width: 600px) {
   .hero {
-    margin: 60px 0;
     padding: 80px 15px;
+    margin: 40px 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .motivation-sect {
+    padding: 25px 15px;
+    margin: 20px auto;
+  }
+
+  .advantages {
+    padding: 60px 20px;
+  }
+
+  .advantages h2,
+  .testimonials h2,
+  .contact h2 {
+    font-size: 1.6em;
+  }
+
+  .advantages-cards,
+  .testimonial-cards,
+  .stats-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .adv-card,
+  .testimonial,
+  .stat {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .stats {
+    padding: 50px 15px;
+  }
+
+  .stat h3 {
+    font-size: 2em;
+  }
+
+  .contact {
+    padding: 60px 15px;
+  }
+
+  .social-icons {
+    gap: 20px;
+  }
+
+  .social-icons img {
+    width: 28px;
+    height: 28px;
   }
 }
 
-@media (max-width: 768px) {
-  .advantages-cards, .testimonial-cards, .stats-container {
-    flex-direction: column;
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero {
+    padding: 100px 30px;
+    margin: 60px 0 25px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .advantages {
+    padding: 70px 30px;
+  }
+
+  .advantages-cards,
+  .testimonial-cards,
+  .stats-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
   }
 
-  .adv-card, .testimonial, .stat {
-    max-width: 90%;
-    margin: 0 auto;
+  .adv-card,
+  .testimonial,
+  .stat {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  .testimonials {
+    padding: 70px 30px;
+  }
+
+  .stats {
+    padding: 60px 30px;
+  }
+
+  .contact {
+    padding: 70px 30px;
   }
 }
+
+/*  Small desktop and higher */
+@media (min-width: 1025px) {
+  .hero {
+    padding: 120px 40px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .advantages,
+  .testimonials,
+  .stats,
+  .contact {
+    padding: 80px 40px;
+  }
+
+  .advantages-cards,
+  .testimonial-cards,
+  .stats-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .adv-card,
+  .testimonial,
+  .stat {
+    max-width: 300px;
+  }
+}
+
 
 
 /* ___________________________________ */
@@ -393,19 +537,19 @@ body.dark-theme .motivation-sect {
 body.dark-theme .motivation-sect h2 {
   color: #90e0ef;
 }
-.dark-theme .quote-text {
+.dark-theme .advice-text {
   color: #f8fafc;
 }
-.dark-theme .quote-but {
+.dark-theme .advice-but {
   background: #00b4d8;
 }
-.dark-theme .quote-but:hover {
+.dark-theme .advice-but:hover {
   background: #90e0ef;
 }
 
 /*  TESTIMONIALS  */
 body.dark-theme .testimonials {
-  background: linear-gradient(135deg, #161b22, #0d1117);
+  background: linear-gradient(135deg, #1f2a38, #2f3d50);
   color: #e6edf3;
 }
 body.dark-theme .testimonial {
@@ -426,6 +570,14 @@ body.dark-theme .stats {
 }
 body.dark-theme .stat h3 {
   color: #ffb703;
+}
+
+body.dark-theme .stats-btn {
+  background: #00b4d8;
+  color: #0d1117;
+}
+body.dark-theme .stats-btn:hover {
+  background: #3ed2f8;
 }
 
 /*  CONTACT  */

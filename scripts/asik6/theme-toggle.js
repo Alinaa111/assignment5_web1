@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const floatingButton = document.querySelector(".theme-toggle");
     const body = document.body;
     const tiktokIcon = document.querySelector(".tiktok-icon");
+    const planIcon = document.querySelector(".plan-icon")
 
     // Loading saved theme
     const currentTheme = localStorage.getItem("theme");
@@ -20,10 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (floatingButton) floatingButton.textContent = "🌞";
             localStorage.setItem("theme", "dark");
             tiktokIcon.src = "../images/icon-tiktok-dark.png";
+            planIcon.src = "../images/icon-plan-dark.png";
         } else {
             if (floatingButton) floatingButton.textContent = "🌙";
             localStorage.setItem("theme", "light");
             tiktokIcon.src = "../images/icon-tiktok.png";
+            planIcon.src = "../images/icon-plan.png"
         }
     }
 
