@@ -433,6 +433,11 @@ body.dark-theme h2,
 body.dark-theme h3 {
   color: #84d1fa;
 }
+body.dark-theme .subtitle {
+  margin-bottom: 40px;
+  color: #84d1fa;
+  font-size: 1.1rem;
+}
 
 /* Membership and Cards */
 body.dark-theme .membership-card {
@@ -475,23 +480,15 @@ body.dark-theme .share-notice {
   background-color: #1a2730;
   color: #fff;
 }
-
-/* Language container */
-body.dark-theme .language-container {
-  background-color: #1f2933;
-  border-color: #374151;
-  color: #f8f9fa;
-}
-
-body.dark-theme .language-container label,
-body.dark-theme .language-container p {
-  color: #e0e0e0;
-}
-
-body.dark-theme #language {
-  background-color: #121212;
-  color: #fff;
-  border: 1px solid #333;
+body.dark-theme .promo-box {
+  background-color: #2f4171;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
 }
 
 body.dark-theme #greeting {
@@ -526,6 +523,16 @@ body.dark-theme .footer-nav .nav-item.active {
 body.dark-theme .page-content {
   background-color: #121212;
 }
+body.dark-theme .action-description {
+  background: #375676;
+  border-left: 3px solid #4aa3ff;
+  padding: 10px 14px;
+  margin: 8px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #faf9f9;
+  animation: fadeIn 0.3s ease;
+}
 
 /* Header */
 body.dark-theme .app-header {
@@ -537,11 +544,34 @@ body.dark-theme .header-icons .status-indicator {
   background-color: #00b4d8;
   color: #fff;
 }
+body.dark-theme .action-list {
+  background: #375676;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+body.dark-theme .membership-details {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #375676;
+  color: #f9f7f7;
+  padding: 12px 16px;
+  border-radius: 10px;
+  width: 85%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  font-size: 14px;
+  animation: fadeIn 0.3s ease;
+}
 
 /* Highlight for gradients that stay colorful */
 body.dark-theme .blue { background: linear-gradient(135deg, #004e92, #000428); }
 body.dark-theme .pink { background: linear-gradient(135deg, #a83279, #67247d); }
-body.dark-theme .green { background: linear-gradient(135deg, #ff9f1c, #ffbf69); }
+body.dark-theme .green { background: linear-gradient(135deg, #e78b0a, #9a5803); }
 /* Task 8: Info Icon Expandable Warning with Copy Button */
 
 /* Info icon interactive */
@@ -829,11 +859,6 @@ body.dark-theme .copy-tooltip::after {
   from {opacity: 0; transform: translateY(-3px);}
   to {opacity: 1; transform: translateY(0);}
 }
-body {
-  font-family: Arial, sans-serif;
-  background: #f7f9fc;
-  padding: 30px;
-}
 
 .action-list {
   background: #fff;
@@ -843,7 +868,6 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
-
 .black-text {
   font-size: 22px;
   color: #111;
