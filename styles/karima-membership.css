@@ -1,27 +1,17 @@
 html {
   overflow-x: hidden;
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body { 
   font-family: Arial, sans-serif;
   background: #ffffff;
   color: #333;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 main {
   padding: 60px 20px;
   text-align: center;
-  flex: 1;
-}
-footer {
-  margin-top: auto; 
 }
 /* Basic Reset and Global Styles */
 body {
@@ -445,7 +435,7 @@ body.dark-theme h3 {
 }
 body.dark-theme .subtitle {
   margin-bottom: 40px;
-  color: #84d1fa;
+  color: ;
   font-size: 1.1rem;
 }
 

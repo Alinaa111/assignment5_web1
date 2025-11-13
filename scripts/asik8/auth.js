@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const navRight = document.querySelectorAll(".nav_right");
   const asides = document.querySelectorAll("aside nav ul");
 
+  // Проверяем, вошёл ли пользователь
+  const isLogged = !!(user && user.loggedIn);
+
+  // === 1️⃣ Рендерим навигацию ===
   function renderNav(isLogged) {
     navRight.forEach(nr => {
       nr.innerHTML = "";
@@ -24,18 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // === 2️⃣ Membership ===
+    const membershipLink = document.getElementById("membershipLink");
+    if (membershipLink) {
+      membershipLink.href = isLogged
+        ? "karima-membership.html"
+        : "buymembership.html"; // ✅ твоя страница для неавторизованных
+    }
+
+    // === 3️⃣ Профиль в aside ===
     asides.forEach(ul => {
       let found = false;
       ul.querySelectorAll("li a").forEach(a => {
         if (a.textContent.trim().toLowerCase().startsWith("profile")) {
           found = true;
-          if (isLogged) {
-            a.href = `${base}aliya-profile.html`;
-            a.textContent = "Profile";
-          } else {
-            a.href = `${base}aliya-profile-guest.html`;
-            a.textContent = "Profile";
-          }
+          a.href = isLogged
+            ? `${base}aliya-profile.html`
+            : `${base}aliya-profile-guest.html`;
+          a.textContent = "Profile";
         }
 
         if (a.href && a.href.includes("aliya-login.html")) {
@@ -44,29 +54,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (!found) {
-        if (isLogged) {
-          ul.insertAdjacentHTML(
-            "beforeend",
-            `<li><a href="${base}aliya-profile.html">Profile</a></li>`
-          );
-        } else {
-          ul.insertAdjacentHTML(
-            "beforeend",
-            `<li><a href="${base}aliya-profile-guest.html">Profile</a></li>`
-          );
-        }
+        ul.insertAdjacentHTML(
+          "beforeend",
+          `<li><a href="${
+            isLogged
+              ? `${base}aliya-profile.html`
+              : `${base}aliya-profile-guest.html`
+          }">Profile</a></li>`
+        );
       }
     });
 
+    // === 4️⃣ Logout ===
     const logoutTop = document.getElementById("logoutTop");
     if (logoutTop) {
       logoutTop.addEventListener("click", e => {
         e.preventDefault();
         localStorage.removeItem("loggedIn");
-        const u = JSON.parse(localStorage.getItem("user"));
-        if (u) {
-          delete u.loggedIn;
-          localStorage.setItem("user", JSON.stringify(u));
+        if (user) {
+          delete user.loggedIn;
+          localStorage.setItem("user", JSON.stringify(user));
         }
         window.location.href = `${base}aliya-profile-guest.html`;
       });
@@ -75,6 +82,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("nav_ready");
   }
 
-  const isLogged = !!(user && user.loggedIn);
   renderNav(isLogged);
 });
+
+// === 5️⃣ Когда пользователь успешно вошёл (пример) ===
+// Вставь этот код в место, где логин проходит успешно:
+function loginSuccess() {
+  const user = { loggedIn: true };
+  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("loggedIn", "true");
+  window.location.href = "aliya-profile.html";
+}
