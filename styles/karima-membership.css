@@ -1,10 +1,11 @@
 html {
-  overflow-x: hidden;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
+
 
 body { 
   font-family: Arial, sans-serif;
@@ -13,6 +14,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 main {
@@ -55,6 +58,9 @@ h1 {
   align-items: center;
   flex-direction: column;
   padding: 20px 0;
+  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Card */
@@ -144,68 +150,64 @@ h1 {
     color: #ebebeb; /* Grey-ish color for the info icon */
 }
 
-    /* Action Lists */
-    .action-list {
-        margin-top: 40px;
-    }
+/* Action Lists */
+.action-list {
+  margin-top: 40px !important;
+}
 
-    .action-list h2 {
-        color: #333; 
-        font-weight: 600;
-        font-size: 20px;
-        margin-bottom: 10px;
-        padding: 0;
-    }
+.action-list h2 {
+  color: #333; 
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding: 0;
+}
     
-    .action-item {
-        background-color:#66a6ff; 
-        border: 1px solid#66a6ff; 
-        border-radius: 8px; 
-        margin-bottom: 10px; 
-        padding: 15px 15px; 
-        
-        display: flex;
-        align-items: center;
-        
-        border-bottom: none; 
-        color: #ffffff; 
-        
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
-        transition: box-shadow 0.2s;
-    }
+.action-item {
+  background-color:#66a6ff; 
+  border: 1px solid#66a6ff; 
+  border-radius: 8px; 
+  margin-bottom: 10px; 
+  padding: 15px 15px; 
+  display: flex;
+  align-items: center;
+  border-bottom: none; 
+  color: #ffffff; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+  transition: box-shadow 0.2s;
+}
     
-    .action-item:hover {
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+.action-item:hover {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-    .action-item:last-child {
-        border-bottom: none; 
-    }
+.action-item:last-child {
+  border-bottom: none; 
+}
 
-      .action-item .icon {
-        margin-right: 15px;
-    }
+.action-item .icon {
+  margin-right: 15px;
+}
     
-    .action-item .text {
-        flex-grow: 1;
-        font-size: 16px; 
-    }
+.action-item .text {
+  flex-grow: 1;
+  font-size: 16px; 
+}
 
-    .action-item .arrow {
-        font-size: 20px;
-        color: #fff;
-        opacity: 0.8;
-        
-        margin-left: 10px; 
-        width: auto;
-    }
-    
-    .section-separator {
-        border: none;
-        border-top: 1px solid #ddd;
-        margin: 20px 0;
-        width: 100%;
-    }
+.action-item .arrow {
+  font-size: 20px;
+  color: #fff;
+  opacity: 0.8; 
+  margin-left: 10px; 
+  width: auto;
+}
+
+.section-separator {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+  width: 100%;
+ }
 
 
 h1 {
@@ -430,6 +432,37 @@ main button:hover {
   transform: translateY(-2px);
 }
 
+.promo-box {
+  display: none;
+}
+.gift-box {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+  .membership-card {
+    width: 70% !important;
+    padding: 15px;
+  }
+
+  .membership-card img {
+    width: 60px;
+    height: auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px)  {
+  .membership-card {
+    width: 75% !important;
+    margin: 0 auto;
+  }
+
+  .membership-card .card-details {
+    text-align: center;
+  }
+}
+
 
 /* _____________________________________________ */
 /*  DARK THEME STYLES */
@@ -588,7 +621,6 @@ body.dark-theme .green { background: linear-gradient(135deg, #e78b0a, #9a5803); 
 .info-icon {
     cursor: pointer;
     transition: all 0.3s ease;
-    user-select: none;
 }
 
 .info-icon:hover {
@@ -932,12 +964,12 @@ body.dark-theme .copy-tooltip::after {
 .info-toggle.open .arrow {
   transform: rotate(90deg);
 }
-/* Don't Share Notice — полностью в стиле action-item */
+
 .share-notice {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #66a6ff; /* такой же фон, как у action-item */
+  background-color: #66a6ff; 
   padding: 15px 20px;
   border-radius: 10px;
   margin: 0 0 10px 0;
@@ -949,16 +981,14 @@ body.dark-theme .copy-tooltip::after {
   cursor: pointer;
 }
 
-/* При наведении и нажатии — то же поведение */
 .share-notice:hover {
-  background-color: #d8edff; /* как hover у action-item */
+  background-color: #d8edff; 
 }
 
 .share-notice:active {
-  transform: scale(0.98); /* эффект клика */
+  transform: scale(0.98); 
 }
 
-/* Текст и иконка */
 .share-notice span:first-child {
   font-size: 16px;
   font-weight: 500;
@@ -967,7 +997,7 @@ body.dark-theme .copy-tooltip::after {
 .share-notice .info-icon {
   font-size: 18px;
   font-weight: bold;
-  color: #007cf0; /* как у стрелки/иконок */
+  color: #007cf0; 
 }
 .action-item {
   display: flex;
@@ -980,18 +1010,17 @@ body.dark-theme .copy-tooltip::after {
   text-decoration: none;
   color: #111;
   box-sizing: border-box;
-  cursor: default; /* теперь сам блок не кликается */
+  cursor: default; 
 }
 
-/* Стрелка */
 .action-item .arrow {
   font-size: 18px;
   color: #007cf0;
-  cursor: pointer; /* кликабельная */
+  cursor: pointer; 
   transition: transform 0.2s ease;
 }
 
-/* При наведении — чуть двигается */
+
 .action-item .arrow:hover {
   transform: translateX(4px);
 }
@@ -1028,25 +1057,24 @@ body.dark-theme .copy-tooltip::after {
   background-color: #0069d9;
 }
 
-/* Анимация появления */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* Увеличить заголовок */
+
 #mainTitle {
-  font-size: 40px;  /* был меньше, теперь крупнее */
+  font-size: 40px;  
   font-weight: bold;
 }
 
-/* Увеличить контейнер карточки */
 .membership-card-container {
-  padding: 40px 0; /* больше отступ сверху и снизу */
+  padding: 40px 0; 
 }
 
 .membership-card {
-  min-height: 350px; /* увеличиваем высоту самой карточки */
-  transform: scale(1.1); /* чуть увеличиваем визуально */
+  min-height: 350px;
+  transform: scale(1.1); 
 }
 .membership-card-container {
   width: 90%;
@@ -1074,11 +1102,11 @@ body.dark-theme .copy-tooltip::after {
 }
 
 .corner-image1 {
-  width: 200px;          /* увеличен размер */
+  width: 200px;          
   position: absolute;
-  top: 10px;             /* чуть ближе к верху */
-  left: 10px;           /* чуть ближе к правому краю */
-  opacity: 0.95;         /* немного прозрачности для гармонии */
+  top: 10px;            
+  left: 10px;           
+  opacity: 0.95;        
 }
 
 .membership-type {
@@ -1114,7 +1142,6 @@ body.dark-theme .copy-tooltip::after {
   text-decoration: underline;
 }
 
-/* Прогресс бар */
 .progress {
   background-color: rgba(255,255,255,0.3);
   border-radius: 10px;
@@ -1125,12 +1152,12 @@ body.dark-theme .copy-tooltip::after {
 
 .progress-bar {
   height: 10px;
-  background-color: #f7971e; /* Оранжевый цвет */
+  background-color: #f7971e; 
   width: 40%;
   border-radius: 10px;
 }
 
-/* Вторая карточка (детали) */
+
 .inner {
   background: linear-gradient(135deg, #007cf0, #00dfd8);
   color: white;

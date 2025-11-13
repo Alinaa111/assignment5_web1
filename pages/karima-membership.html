@@ -40,71 +40,71 @@
     <section class="app-header">
       <h1 id="mainTitle" class="black-text">My membership</h1>
     </section>
+
+    <section class="info-cards-container">
+
     <section class="membership-card-container">
-  <!-- General card -->
-  <div class="membership-card" id="mainCard">
-    <img src="../images/365.png" alt="12 months membership" class="corner-image1">
-    <div class="card-details">
-      <p class="membership-type">Personal membership</p>
-      <p class="duration">for 365 days</p>
-      <div class="progress">
-        <div class="progress-bar"></div>
+      <!-- General card -->
+      <div class="membership-card" id="mainCard">
+        <img src="../images/365.png" alt="12 months membership" class="corner-image1">
+        <div class="card-details">
+          <p class="membership-type">Personal membership</p>
+          <p class="duration">for 365 days</p>
+          <div class="progress">
+            <div class="progress-bar"></div>
+          </div>
+          <p class="days-left">143 days left <span class="until">until March 29, 2026</span></p>
+          <p class="reset-text">Your visit limit will reset on November 24 at 00:00.</p>
+        </div>
+        <button class="next-button" id="nextButton">→</button>
       </div>
-      <p class="days-left">143 days left <span class="until">until March 29, 2026</span></p>
-      <p class="reset-text">Your visit limit will reset on November 24 at 00:00.</p>
-    </div>
-    <button class="next-button" id="nextButton">→</button>
-  </div>
 
-  <!-- Inner page -->
-  <div class="membership-card inner hidden" id="detailsCard">
-    <button id="backButton" class="back-button">←</button>
-    <h3>Bonus days</h3>
-    <div class="info-box">
-      <p class="bonus">30 days</p>
-      <p class="desc">Will activate after the main membership</p>
-    </div>
+      <!-- Inner page -->
+      <div class="membership-card inner hidden" id="detailsCard">
+        <button id="backButton" class="back-button">←</button>
+        <h3>Bonus days</h3>
+        <div class="info-box">
+          <p class="bonus">30 days</p>
+          <p class="desc">Will activate after the main membership</p>
+        </div>
 
-    <div class="info-grid">
-      <div class="info-item">
-        <h4>Attendance</h4>
-        <p class="highlight">89 / 100</p>
-        <p>Perfect</p>
+        <div class="info-grid">
+          <div class="info-item">
+            <h4>Attendance</h4>
+            <p class="highlight">89 / 100</p>
+            <p>Perfect</p>
+          </div>
+          <div class="info-item">
+            <h4>Freezing</h4>
+            <p class="highlight">60</p>
+            <p>days left</p>
+          </div>
+        </div>
       </div>
-      <div class="info-item">
-        <h4>Freezing</h4>
-        <p class="highlight">60</p>
-        <p>days left</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
   
     <section class="action-list">
       <div class="share-notice">
-      <span id="shareText" class="black-text">Don't share your membership</span>
-      <span class="info-icon">ⓘ</span>
-    </div>
-  <h2 id="bonusTitle" class="black-text">Earn bonus days</h2>
+        <span id="shareText" class="black-text">Don't share your membership</span>
+        <span class="info-icon">ⓘ</span>
+      </div>
+      <h2 id="bonusTitle" class="black-text">Earn bonus days</h2>
 
-  <a href="#" class="action-item">
-    <span class="icon"></span>
-    <span class="text" id="giftText">Gift a free trial</span>
-    <span class="arrow">➔</span>
-    <div id="giftBox" class="gift-box" style="display: none;"></div>
+      <a href="#" class="action-item">
+        <span class="icon"></span>
+        <span class="text" id="giftText">Gift a free trial</span>
+        <span class="arrow">➔</span>
+        <div id="giftBox" class="gift-box"></div>
+      </a>
 
-  </a>
-
-  <a href="#" class="action-item" id="promoItem">
-    <span class="icon"></span>
-    <span class="text" id="promoText">Share promo code</span>
-    <span class="arrow" id="promoArrow">➔</span>
-  </a>
-   <div id="promoBox" class="promo-box" style="display: none;"></div>
-      
-</section>
-
+      <a href="#" class="action-item" id="promoItem">
+        <span class="icon"></span>
+        <span class="text" id="promoText">Share promo code</span>
+        <span class="arrow" id="promoArrow">➔</span>
+      </a>
+      <div id="promoBox" class="promo-box"></div>
+          
     </section>
 
     <section class="action-list">
@@ -142,23 +142,7 @@
   <script src="../scripts/asik8/buymem.js"></script>
   <script src="../scripts/asik8/promo.js"></script>
   <script src="../scripts/asik8/auth.js"></script>
-  <script>
-   const nextButton = document.getElementById("nextButton");
-const backButton = document.getElementById("backButton");
-const mainCard = document.getElementById("mainCard");
-const detailsCard = document.getElementById("detailsCard");
-
-nextButton.addEventListener("click", () => {
-  mainCard.classList.add("hidden");
-  detailsCard.classList.remove("hidden");
-});
-
-backButton.addEventListener("click", () => {
-  detailsCard.classList.add("hidden");
-  mainCard.classList.remove("hidden");
-});
-
-  </script>
+  <script src="../scripts/final/cards-mem.js"></script>
 
 </body>
 </html>
