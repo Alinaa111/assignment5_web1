@@ -70,6 +70,22 @@
       <p id="advice" class="advice-text">Click button to get a random advice for life.</p>
       <button id="adviceButton" class="advice-but">Get New Advice</button>
     </section>
+
+    <button class="show-recipe-btn">🍳 Show Recipe of the Day</button>
+
+    <section class="recipe-of-the-day hidden" id="recipe-section">
+      <h2>🍴 Recipe of the Day</h2>
+      <div class="recipe-card" id="recipe-card">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <img id="meal-img" src="" alt="Meal of the Day" />
+        <h3 id="meal-title"></h3>
+        <p id="meal-instructions"></p>
+        <button class="meal-but">Next Recipe</button>
+      </div>
+    </section>
+
+
+
     <section class="advantages">
       <h2>Why Choose Us</h2>
       <div class="advantages-cards">
@@ -80,6 +96,7 @@
         </div>
         <div class="adv-card">
           <img class="plan-icon" src="images/icon-plan.png" alt="Plan Icon">
+          <img class="plan-icon-darkTheme" src="images/icon-plan-dark.png" alt="Plan Icon for dark">
           <h3>Personalized Programs</h3>
           <p>We adapt workouts to your needs, schedule, and fitness level.</p>
         </div>
@@ -136,7 +153,7 @@
   
       <nav class="social-icons">
         <a href="https://www.instagram.com/alinam1tf?igsh=MTg0cnEycXhzYjN6Zw=="><img src="images/icon-instagram.png" alt="Instagram"></a>
-        <a href="https://www.tiktok.com/@rarata177?_r=1&_t=ZM-91Adyt9cv8t"><img src="images/icon-tiktok.png" alt="TikTok" class="tiktok-icon"></a>
+        <a href="https://www.tiktok.com/@rarata177?_r=1&_t=ZM-91Adyt9cv8t"><img src="images/icon-tiktok.png" alt="TikTok" class="tiktok-icon"> <img src="images/icon-tiktok-dark.png" alt="TikTok for dark" class="tiktok-icon-darkTheme"></a>
         <a href="https://wa.me/77761731210"><img src="images/icon-whatsapp.png" alt="WhatsApp"></a>
         <a href="https://t.me/alinam1tf"><img src="images/icon-telegram.png" alt="Telegram"></a>
       </nav>
@@ -164,6 +181,7 @@
   <script src="scripts/asik6/keyboard_n_multi.js"></script>
   <script src="scripts/asik8/auth.js"></script>
   <script src="scripts/asik7/progress.js"></script>
+  <script src="scripts/final/recipe-api.js"></script>
 
 </body>
 </html>

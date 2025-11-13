@@ -267,7 +267,6 @@ mark {
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
-  backdrop-filter: blur(5px);
   transition: opacity 0.3s ease;
 }
 
@@ -320,8 +319,8 @@ mark {
   padding-left: 20px;
   max-height: 55vh; 
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #fff #333;
+  /* scrollbar-width: thin;
+  scrollbar-color: #fff #333; */
 }
 #modalRooms::-webkit-scrollbar {
   width: 6px;
