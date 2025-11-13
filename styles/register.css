@@ -356,8 +356,10 @@ body.dark-theme input.error {
 
 /* Image adjustments */
 body.dark-theme .image {
-  filter: brightness(0.85);
+  filter: brightness(0.6);
 }
+
+
 .toast {
   position: fixed;
   bottom: 30px;
@@ -441,3 +443,22 @@ body.dark-theme .image {
     box-sizing: border-box;
   }
 }
+/* === Autofill background fix === */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
+  -webkit-text-fill-color: #e5e7eb !important;
+  background-color: transparent !important;
+  box-shadow: 0 0 0px 1000px #0f172a inset !important; 
+  border: 1px solid #374151 !important;
+}
+
+
+body:not(.dark-theme) input:-webkit-autofill {
+  -webkit-text-fill-color: #000 !important;
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  border: 1px solid #d1d5db !important;
+}
+
