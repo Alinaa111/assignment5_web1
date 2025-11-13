@@ -93,9 +93,8 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-body.dark-theme {
-  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
-  color: #e2e8f0;
+body.dark-theme main {
+  background: transparent;
 }
 
 body.dark-theme .guest-container {
