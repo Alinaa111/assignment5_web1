@@ -131,11 +131,82 @@ html, body {
   background-color: #005f87;
 }
 
+/* RECIPE */
+#recipe-section {
+  display: none;
+}
+
+.recipe-of-the-day {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 100%;
+  background: linear-gradient(135deg, #1490d3, #00cbf4);
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff; 
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.recipe-card {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #636363;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #ffb703;
+}
+
+.recipe-of-the-day img {
+  width: 50%;
+  height: 35%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-of-the-day button.meal-but {
+  background: #0077b6;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.recipe-of-the-day button.meal-but:hover {
+  background: #005f87;
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+
 /*  ADVANTAGES  */
 .advantages {
   background: #f0f9ff;
   padding: 80px 40px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .advantages h2 {
@@ -528,6 +599,16 @@ body.dark-theme .adv-card h3 {
   color: #00b4d8;
 }
 
+.plan-icon-darkTheme {
+  display: none;
+}
+body.dark-theme .plan-icon {
+  display: none;
+}
+body.dark-theme .plan-icon-darkTheme {
+  display: inline;
+}
+
 /* QUOTES */
 body.dark-theme .motivation-sect {
   background: #1e293b;
@@ -546,6 +627,24 @@ body.dark-theme .motivation-sect h2 {
 .dark-theme .advice-but:hover {
   background: #90e0ef;
 }
+
+body.dark-theme .recipe-of-the-day {
+  background: linear-gradient(135deg, #1f2a38, #2f3d50);
+  color: #e6edf3;
+}
+
+.dark-theme .close-but {
+  background: #00b4d8;
+}
+.dark-theme .close-but:hover {
+  background: #90e0ef;
+}
+
+.dark-theme .show-recipe-btn {
+  background: #465b7d;
+  color: #e2e8f0;
+} 
+
 
 /*  TESTIMONIALS  */
 body.dark-theme .testimonials {
@@ -592,6 +691,16 @@ body.dark-theme .contact h2 {
 }
 body.dark-theme .contact p {
   color: #9aa0a6;
+}
+
+.tiktok-icon-darkTheme {
+  display: none;
+}
+body.dark-theme .tiktok-icon {
+  display: none;
+}
+body.dark-theme .tiktok-icon-darkTheme {
+  display: inline;
 }
 
 /*  SOCIAL ICONS  */

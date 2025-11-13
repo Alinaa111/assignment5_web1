@@ -158,18 +158,17 @@ body.dark-theme .card h2 {
 body.dark-theme .card p {
   color: #ddd;
 }
-/* По умолчанию показываем светлую иконку */
+/* By default mode no display for icon dark theme */
 .calendar-icon.dark-mode {
   display: none;
 }
-
-/* Когда тело получает класс dark (тёмный режим) */
+/* Taking default icon away */
 body.dark-theme .calendar-icon {
-  display: none; /* скрываем светлую */
+  display: none; 
 }
-
+/* Setting icon for dark */
 body.dark-theme .calendar-icon.dark-mode {
-  display: inline; /* показываем черную */
+  display: inline; 
 }
 
 
