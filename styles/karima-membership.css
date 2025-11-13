@@ -584,11 +584,18 @@ body.dark-theme .pink { background: linear-gradient(135deg, #a83279, #67247d); }
 body.dark-theme .green { background: linear-gradient(135deg, #e78b0a, #9a5803); }
 /* Task 8: Info Icon Expandable Warning with Copy Button */
 
+
+#giftBox {
+  display: none;
+}
+
+#promoBox {
+  display: none;
+}
 /* Info icon interactive */
 .info-icon {
     cursor: pointer;
     transition: all 0.3s ease;
-    user-select: none;
 }
 
 .info-icon:hover {
