@@ -134,16 +134,17 @@ section {
 
 /* Background colors */
 .bg-dark {
-  background-color: #212529 !important;
+  background: #212529 ;
+  background: linear-gradient(177deg, rgba(38, 38, 38, 1) 0%, rgba(41, 63, 91, 1) 72%);
   color: #ffffff;
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #f8f9fa;
 }
 
 .bg-white {
-  background-color: #ffffff !important;
+  background-color: #ffffff ;
 }
 
 .bg-primary {
@@ -376,41 +377,229 @@ section {
     padding: 10px;
 }
 
+/* ================================================
+   IMPROVED FORM GROUP RESPONSIVE STYLING
+   ================================================ */
+
 .form-group {
-    margin-bottom: 12px;
+  margin-bottom: 20px;
+  padding: 0 5px; /* Small padding for mobile */
 }
 
+
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #161618;
-    font-size: 0.95rem;
+  display: block;
+  margin-bottom: 10px;
+  padding: 0 5px;
+  font-weight: 600;
+  color: #161618;
+  font-size: 0.95rem;
 }
 
 .form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  max-width: 100%; /* Prevent overflow */
+  padding: 12px 15px;
+  margin: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Critical for proper width calculation */
+  transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color:linear-gradient(135deg, #0077b6, #00b4d8)
-;
-    box-shadow: 0 0 0 3px rgba(52, 71, 246, 0.1);
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #00b4d8;
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.1);
 }
 
 .form-group textarea {
-    resize: vertical;
-    min-height: 80px;
+  resize: vertical;
+  min-height: 100px;
 }
 
+/* Multi-Step Form Wrapper - Enhanced Responsive */
+.form-wrapper {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 30px 20px; /* Adjusted padding */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Form Steps Container */
+.multi-step-form-content {
+  margin-top: 30px;
+  padding: 0 10px; /* Extra padding for form content */
+}
+
+#form-steps-container {
+  min-height: 300px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 0 5px;
+}
+
+/* Modal Body - Better spacing for forms */
+.modal-body {
+  padding: 25px 30px;
+}
+
+/* ================================================
+   TABLET RESPONSIVE (768px - 991px)
+   ================================================ */
+@media (max-width: 991px) and (min-width: 768px) {
+  .form-wrapper {
+    max-width: 90%;
+    padding: 25px 20px;
+    margin: 30px auto;
+  }
+  
+  .form-group {
+    margin-bottom: 18px;
+    padding: 0 8px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 11px 14px;
+    font-size: 0.95rem;
+  }
+  
+  .multi-step-form-content {
+    padding: 0 8px;
+  }
+}
+
+/* ================================================
+   MOBILE RESPONSIVE (below 768px)
+   ================================================ */
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 20px 15px;
+    margin: 20px 10px;
+    max-width: calc(100% - 20px);
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+    padding: 0 5px;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    padding: 0 3px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .multi-step-form-content {
+    margin-top: 20px;
+    padding: 0 5px;
+  }
+  
+  #form-steps-container {
+    min-height: 250px;
+    padding: 0 3px;
+  }
+  
+  .modal-body {
+    padding: 20px 15px;
+  }
+  
+  .form-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .btn-modal {
+    width: 100%;
+    padding: 12px 15px;
+  }
+}
+
+/* ================================================
+   SMALL MOBILE (below 480px)
+   ================================================ */
+@media (max-width: 480px) {
+  .form-wrapper {
+    padding: 15px 10px;
+    margin: 15px 5px;
+    max-width: calc(100% - 10px);
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 14px;
+    padding: 0 3px;
+  }
+  
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 9px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .form-group textarea {
+    min-height: 80px;
+  }
+  
+  .multi-step-form-content {
+    margin-top: 15px;
+    padding: 0 3px;
+  }
+  
+  #form-steps-container {
+    min-height: 200px;
+  }
+  
+  .modal-body {
+    padding: 15px 10px;
+  }
+  
+  .btn-modal {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ================================================
+   DARK MODE ADJUSTMENTS
+   ================================================ */
+body.dark-theme .form-group input,
+body.dark-theme .form-group textarea,
+body.dark-theme .form-group select {
+  background-color: #262626;
+  background-color: linear-gradient(177deg, rgba(38, 38, 38, 1) 0%, rgba(41, 63, 91, 1) 72%);
+  border: 1px solid #333;
+  color: #f1f1f1;
+}
+
+body.dark-theme .form-group input:focus,
+body.dark-theme .form-group textarea:focus,
+body.dark-theme .form-group select:focus {
+  border-color: #00b4d8;
+  box-shadow: 0 0 0 3px #00b4d833;
+}
 .modal-footer {
     padding: 0 30px 30px 30px;
     display: flex;
@@ -432,6 +621,8 @@ section {
     background-color: #00b4d8;
     color: white;
 }
+
+
 
 .btn-submit:hover {
     background-color: linear-gradient(135deg, #0077b6, #00b4d8)
@@ -686,14 +877,6 @@ main {
   position: relative;
 }
 
-.progress-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
 .step-circle {
   width: 45px;
   height: 45px;
@@ -836,9 +1019,9 @@ main {
 .dark-theme section,
 .dark-theme .container,
 .dark-theme .faq {
-  background-color: #121212;
+  background-color: transparent !important;
   color: #eaeaea;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: 0.4s ease, color 0.4s ease;
 }
 
 /* Headings */
@@ -892,9 +1075,9 @@ main {
 
 /* Modal */
 .dark-theme .modal-content {
-  background-color: #1a1a1a;
-  color: #f1f1f1;
-  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.05);
+background: #262626;
+background: linear-gradient(177deg, rgba(38, 38, 38, 1) 0%, rgba(41, 63, 91, 1) 72%);  color: #f1f1f1;
+  box-shadow: 0 10px 40px #ffffff0d;
 }
 
 .dark-theme .modal-header {
@@ -915,11 +1098,18 @@ main {
   border: 1px solid #333;
   color: #f1f1f1;
 }
-
+.dark-theme .form-group label{
+  display: block;
+  margin-bottom: 10px;
+  padding: 0 5px;
+  font-weight: 600;
+  color: #161618;
+  font-size: 0.95rem;
+}
 .dark-theme .form-group input:focus,
 .dark-theme .form-group textarea:focus {
   border-color: #00b4d8;
-  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.2);
+  box-shadow: 0 0 0 3px #00b4d833;
 }
 
 /* Modal buttons */
@@ -1255,4 +1445,197 @@ body:not(.dark-theme) .review-box strong {
 /* Message displayed in review section */
 body:not(.dark-theme) .review-section .message-preview {
     color: #46464A !important;
+}
+/* ================================================
+   REVIEW STEP (STEP 3) STYLES - LIGHT MODE
+   ================================================ */
+
+.step-heading {
+  color: #0077b6;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.review-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #00b4d8;
+}
+
+.review-section {
+  margin-bottom: 15px;
+}
+
+.review-section-divider {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #dee2e6;
+}
+
+.review-title {
+  color: #00b4d8;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.review-item {
+  margin: 8px 0;
+  color: #161618;
+  line-height: 1.6;
+}
+
+.review-label {
+  color: #000000;
+  font-weight: 700;
+}
+
+.review-value {
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.review-message-box {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-style: italic;
+  border: 1px solid #dee2e6;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+.terms-checkbox-group {
+  margin-top: 20px;
+}
+
+.terms-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #161618;
+}
+
+.terms-checkbox {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #00b4d8;
+}
+
+.terms-text {
+  font-size: 1rem;
+  color: #161618;
+}
+
+/* ================================================
+   REVIEW STEP (STEP 3) STYLES - DARK MODE
+   ================================================ */
+
+body.dark-theme .step-heading {
+  color: #90e0ef;
+}
+
+body.dark-theme .review-container {
+  background: #1e1e1e;
+  border-left: 4px solid #00b4d8;
+}
+
+body.dark-theme .review-section-divider {
+  border-top: 1px solid #333;
+}
+
+body.dark-theme .review-title {
+  color: #00b4d8;
+}
+
+body.dark-theme .review-item {
+  color: #eaeaea;
+}
+
+body.dark-theme .review-label {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+body.dark-theme .review-value {
+  color: #cccccc;
+}
+
+body.dark-theme .review-message-box {
+  background: #262626;
+  border: 1px solid #333;
+  color: #d1d1d1;
+}
+
+body.dark-theme .terms-label {
+  color: #eaeaea;
+}
+
+body.dark-theme .terms-text {
+  color: #eaeaea;
+}
+
+body.dark-theme .terms-checkbox {
+  accent-color: #00b4d8;
+}
+
+/* ================================================
+   RESPONSIVE ADJUSTMENTS FOR REVIEW STEP
+   ================================================ */
+
+@media (max-width: 768px) {
+  .step-heading {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .review-container {
+    padding: 15px;
+  }
+  
+  .review-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  
+  .review-item {
+    font-size: 0.95rem;
+  }
+  
+  .review-message-box {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .terms-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .terms-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-heading {
+    font-size: 1.2rem;
+  }
+  
+  .review-container {
+    padding: 12px;
+  }
+  
+  .review-title {
+    font-size: 0.95rem;
+  }
+  
+  .review-item {
+    font-size: 0.9rem;
+  }
 }

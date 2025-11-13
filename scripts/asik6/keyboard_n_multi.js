@@ -87,7 +87,7 @@ function renderCurrentStep() {
 
 function displayStepContent(stepIndex, callback) {
   let stepHTML = '';
-  
+  updateProgressBar(stepIndex);
   switch(stepIndex) {
     case 0:
       stepHTML = `
@@ -140,79 +140,78 @@ function displayStepContent(stepIndex, callback) {
       break;
       
     case 2:
-      const data = formState.formData;
-      stepHTML = `
-        <div class="form-step active">
-          <h3 style="color: #0077b6; margin-bottom: 20px; font-size: 1.5rem;">Step 3: Review & Confirm</h3>
-          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #00b4d8;">
-            <h4 style="color: #00b4d8; margin-bottom: 15px; font-size: 1.1rem;">Personal Information</h4>
-            <p style="margin: 8px 0;"><strong>Name:</strong> ${data.step1.fullname || 'N/A'}</p>
-            <p style="margin: 8px 0;"><strong>Email:</strong> ${data.step1.email || 'N/A'}</p>
-            <p style="margin: 8px 0;"><strong>Phone:</strong> ${data.step1.phone || 'N/A'}</p>
-            
-            <h4 style="color: #00b4d8; margin-top: 20px; margin-bottom: 15px; font-size: 1.1rem; padding-top: 15px; border-top: 1px solid #dee2e6;">Message Details</h4>
-            <p style="margin: 8px 0;"><strong>Subject:</strong> ${data.step2.subject || 'N/A'}</p>
-            <p style="margin: 8px 0;"><strong>Priority:</strong> ${data.step2.priority || 'N/A'}</p>
-            <p style="margin: 8px 0;"><strong>Message:</strong></p>
-            <p style="background: #fff; padding: 15px; border-radius: 6px; margin-top: 10px; font-style: italic; border: 1px solid #dee2e6;">${data.step2.message || 'N/A'}</p>
-          </div>
-          <div class="form-group" style="margin-top: 20px;">
-            <label style="display: flex; align-items: center; cursor: pointer;">
-              <input type="checkbox" id="agree-terms" required style="margin-right: 10px; width: 20px; height: 20px; cursor: pointer;">
-              <span>I agree to the terms and conditions *</span>
-            </label>
-          </div>
+  const data = formState.formData;
+  stepHTML = `
+    <div class="form-step active">
+      <h3 class="step-heading">Step 3: Review & Confirm</h3>
+      <div class="review-container">
+        <div class="review-section">
+          <h4 class="review-title">Personal Information</h4>
+          <p class="review-item"><strong class="review-label">Name:</strong> <span class="review-value">${data.step1.fullname || 'N/A'}</span></p>
+          <p class="review-item"><strong class="review-label">Email:</strong> <span class="review-value">${data.step1.email || 'N/A'}</span></p>
+          <p class="review-item"><strong class="review-label">Phone:</strong> <span class="review-value">${data.step1.phone || 'N/A'}</span></p>
         </div>
-      `;
-      break;
+        
+        <div class="review-section review-section-divider">
+          <h4 class="review-title">Message Details</h4>
+          <p class="review-item"><strong class="review-label">Subject:</strong> <span class="review-value">${data.step2.subject || 'N/A'}</span></p>
+          <p class="review-item"><strong class="review-label">Priority:</strong> <span class="review-value">${data.step2.priority || 'N/A'}</span></p>
+          <p class="review-item"><strong class="review-label">Message:</strong></p>
+          <div class="review-message-box">${data.step2.message || 'N/A'}</div>
+        </div>
+      </div>
+      
+      <div class="form-group terms-checkbox-group">
+        <label class="terms-label">
+          <input type="checkbox" id="agree-terms" class="terms-checkbox" required>
+          <span class="terms-text">I agree to the terms and conditions *</span>
+        </label>
+      </div>
+    </div>
+  `;
+  break;
   }
-  
+  const container = document.getElementById('form-steps-container');
+  if (container) {
+    container.innerHTML = stepHTML;
+  }
   callback(stepHTML);
 }
 
-function attachFormEventListeners() {
-  const form = document.getElementById('contact-form');
-  const backBtn = document.getElementById('back-btn');
-  const nextBtn = document.getElementById('next-btn');
-  
-  backBtn.addEventListener('click', () => {
-    saveCurrentStepData();
-    handleStepNavigation(-1, () => {
-      formState.currentStep--;
-      renderCurrentStep();
-    });
-  });
-  
-  nextBtn.addEventListener('click', () => {
-    if (validateCurrentStep()) {
-      saveCurrentStepData();
-      handleStepNavigation(1, () => {
-        formState.currentStep++;
-        renderCurrentStep();
-      });
-    }
-  });
-  
-  form.addEventListener('submit', (e) => {
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('btn-next') || e.target.closest('.btn-next')) {
     e.preventDefault();
     
-    const agreeCheckbox = document.getElementById('agree-terms');
-    if (!agreeCheckbox || !agreeCheckbox.checked) {
-      showFormMessage('Please agree to the terms and conditions', 'error');
-      return;
+    if (formState.currentStep < 2) {
+      // Save current step data
+      saveCurrentStepData();
+      
+      // Move to next step
+      formState.currentStep++;
+      
+      // This will automatically update progress bar
+      displayStepContent(formState.currentStep);
+      
+      // Update button visibility
+      updateNavigationButtons();
     }
+  }
+  
+  if (e.target.classList.contains('btn-prev') || e.target.closest('.btn-prev')) {
+    e.preventDefault();
     
-    saveCurrentStepData();
-    submitFormData((success, message) => {
-      if (success) {
-        showFormMessage(message, 'success');
-        setTimeout(() => resetForm(), 3000);
-      } else {
-        showFormMessage(message, 'error');
-      }
-    });
-  });
-}
+    if (formState.currentStep > 0) {
+      // Move to previous step
+      formState.currentStep--;
+      
+      // This will automatically update progress bar
+      displayStepContent(formState.currentStep);
+      
+      // Update button visibility
+      updateNavigationButtons();
+    }
+  }
+});
 
 function handleStepNavigation(direction, callback) {
   const container = document.getElementById('form-steps-container');
@@ -257,7 +256,27 @@ function updateProgressBar() {
     }
   });
 }
-
+function updateProgressBar(currentStep) {
+  // Update progress step circles
+  const progressSteps = document.querySelectorAll('.progress-step');
+  progressSteps.forEach((step, index) => {
+    if (index <= currentStep) {
+      step.classList.add('active');
+    } else {
+      step.classList.remove('active');
+    }
+  });
+  
+  // Update progress lines
+  const progressLines = document.querySelectorAll('.progress-line');
+  progressLines.forEach((line, index) => {
+    if (index < currentStep) {
+      line.classList.add('active');
+    } else {
+      line.classList.remove('active');
+    }
+  });
+}
 function validateCurrentStep() {
   const currentStepElement = document.querySelector('.form-step.active');
   const inputs = currentStepElement.querySelectorAll('input[required], select[required], textarea[required]');
