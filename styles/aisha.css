@@ -1209,28 +1209,124 @@ footer {
   }
 }
 
-/* === FIX MOBILE LAYOUT SHIFT === */
-* {
-  box-sizing: border-box;
-}
-
+/* === FIX RIGHT SHIFT (without touching header/nav) === */
 html, body {
+  margin: 0;
+  padding: 0;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
-section, div, header, footer {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-.rating-section,
-.stats-section,
-.carousel-section {
+/* Центрируем и ограничиваем контент под header */
+main,
+footer,
+section,
+.container,
+.carousel-section,
+.rating-section {
   width: 100%;
   max-width: 100vw;
   margin: 0 auto;
   overflow-x: hidden;
+  position: relative;
+  box-sizing: border-box;
 }
+
+/* --- Carousel Fix --- */
+.carousel-container,
+.carousel,
+.carousel-inner,
+.carousel-item {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Управляющие кнопки остаются внутри */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  background: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+/* --- Indicators fix (точки) --- */
+.carousel-indicators {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 5;
+  overflow: visible;
+  width: auto;
+  max-width: 240px;
+}
+
+/* --- Rating Indicator fix --- */
 .rating-saved-indicator {
-  right: clamp(10px, 2vw, 30px);
+  position: fixed;
+  top: clamp(80px, 12vh, 120px);
+  right: clamp(12px, 2vw, 30px);
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1em;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(400px);
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.rating-saved-indicator.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Responsive fix --- */
+@media (max-width: 768px) {
+  main, section, footer {
+    max-width: 100vw;
+    padding: 0;
+  }
+
+  .carousel-container {
+    width: 92%;
+    max-width: 92vw;
+  }
+
+  .carousel-indicators {
+    bottom: 60px;
+    max-width: 180px;
+  }
+
+  .carousel-prev { left: 6px; }
+  .carousel-next { right: 6px; }
+
+  .rating-saved-indicator {
+    right: clamp(8px, 4vw, 16px);
+    padding: 12px 18px;
+    font-size: 1em;
+  }
 }
